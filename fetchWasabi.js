@@ -2,13 +2,13 @@ const https = require('https');
 const fs = require('fs');
 
 // File path to save the data
-const filePath = './data/songs_data.txt';
+const filePath = './data/songs_data_1k.json'
 
 // Function to fetch artists using https module
 function fetchArtists(start = 0) {
     const url = `https://wasabi.i3s.unice.fr/api/v1/artist_all/${start}`;
     const batchSize = 200;
-    const limit = 77492; // Total number of artists in the database
+    const limit = 1000; // Limit to the first 1000 artists
 
     // Make the HTTPS request
     https.get(url, (response) => {
@@ -61,5 +61,4 @@ function fetchArtists(start = 0) {
 }
 
 // Start fetching from the beginning (start = 0)
-// extraccted 76000
 fetchArtists(0);
