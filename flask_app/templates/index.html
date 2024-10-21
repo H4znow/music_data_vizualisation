@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tequila Label - Music Distribution Visualizations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Tequila Label's Music Distribution</h1>
+        <p>Select a visualization:</p>
+        <ul>
+            <li><a href="{{ url_for('visualization1') }}">Visualization 1: World Distribution</a></li>
+            <li><a href="{{ url_for('visualization2') }}">Visualization 2: Genre Popularity</a></li>
+            <li><a href="{{ url_for('visualization3') }}">Visualization 3: Time Evolution</a></li>
+        </ul>
+    </div>
+</body>
+</html>
