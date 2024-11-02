@@ -1,0 +1,1152 @@
+[
+  {
+    "year": 2000,
+    "genre": "Rock",
+    "listeners": 4351
+  },
+  {
+    "year": 2000,
+    "genre": "Pop",
+    "listeners": 3289
+  },
+  {
+    "year": 2000,
+    "genre": "Jazz",
+    "listeners": 3766
+  },
+  {
+    "year": 2000,
+    "genre": "Classical",
+    "listeners": 4951
+  },
+  {
+    "year": 2000,
+    "genre": "Hip Hop",
+    "listeners": 2485
+  },
+  {
+    "year": 2000,
+    "genre": "Electronic",
+    "listeners": 4209
+  },
+  {
+    "year": 2000,
+    "genre": "Country",
+    "listeners": 1546
+  },
+  {
+    "year": 2000,
+    "genre": "Reggae",
+    "listeners": 4932
+  },
+  {
+    "year": 2000,
+    "genre": "Blues",
+    "listeners": 2095
+  },
+  {
+    "year": 2000,
+    "genre": "R&B",
+    "listeners": 1081
+  },
+  {
+    "year": 2001,
+    "genre": "Rock",
+    "listeners": 3032
+  },
+  {
+    "year": 2001,
+    "genre": "Pop",
+    "listeners": 3143
+  },
+  {
+    "year": 2001,
+    "genre": "Jazz",
+    "listeners": 3875
+  },
+  {
+    "year": 2001,
+    "genre": "Classical",
+    "listeners": 3069
+  },
+  {
+    "year": 2001,
+    "genre": "Hip Hop",
+    "listeners": 2808
+  },
+  {
+    "year": 2001,
+    "genre": "Electronic",
+    "listeners": 3675
+  },
+  {
+    "year": 2001,
+    "genre": "Country",
+    "listeners": 4315
+  },
+  {
+    "year": 2001,
+    "genre": "Reggae",
+    "listeners": 4571
+  },
+  {
+    "year": 2001,
+    "genre": "Blues",
+    "listeners": 1003
+  },
+  {
+    "year": 2001,
+    "genre": "R&B",
+    "listeners": 2525
+  },
+  {
+    "year": 2002,
+    "genre": "Rock",
+    "listeners": 4138
+  },
+  {
+    "year": 2002,
+    "genre": "Pop",
+    "listeners": 1768
+  },
+  {
+    "year": 2002,
+    "genre": "Jazz",
+    "listeners": 3990
+  },
+  {
+    "year": 2002,
+    "genre": "Classical",
+    "listeners": 1024
+  },
+  {
+    "year": 2002,
+    "genre": "Hip Hop",
+    "listeners": 849
+  },
+  {
+    "year": 2002,
+    "genre": "Electronic",
+    "listeners": 2019
+  },
+  {
+    "year": 2002,
+    "genre": "Country",
+    "listeners": 1731
+  },
+  {
+    "year": 2002,
+    "genre": "Reggae",
+    "listeners": 4235
+  },
+  {
+    "year": 2002,
+    "genre": "Blues",
+    "listeners": 3270
+  },
+  {
+    "year": 2002,
+    "genre": "R&B",
+    "listeners": 4411
+  },
+  {
+    "year": 2003,
+    "genre": "Rock",
+    "listeners": 3964
+  },
+  {
+    "year": 2003,
+    "genre": "Pop",
+    "listeners": 2616
+  },
+  {
+    "year": 2003,
+    "genre": "Jazz",
+    "listeners": 3099
+  },
+  {
+    "year": 2003,
+    "genre": "Classical",
+    "listeners": 2954
+  },
+  {
+    "year": 2003,
+    "genre": "Hip Hop",
+    "listeners": 3565
+  },
+  {
+    "year": 2003,
+    "genre": "Electronic",
+    "listeners": 557
+  },
+  {
+    "year": 2003,
+    "genre": "Country",
+    "listeners": 4772
+  },
+  {
+    "year": 2003,
+    "genre": "Reggae",
+    "listeners": 4626
+  },
+  {
+    "year": 2003,
+    "genre": "Blues",
+    "listeners": 4875
+  },
+  {
+    "year": 2003,
+    "genre": "R&B",
+    "listeners": 2842
+  },
+  {
+    "year": 2004,
+    "genre": "Rock",
+    "listeners": 4743
+  },
+  {
+    "year": 2004,
+    "genre": "Pop",
+    "listeners": 2580
+  },
+  {
+    "year": 2004,
+    "genre": "Jazz",
+    "listeners": 4272
+  },
+  {
+    "year": 2004,
+    "genre": "Classical",
+    "listeners": 3618
+  },
+  {
+    "year": 2004,
+    "genre": "Hip Hop",
+    "listeners": 4712
+  },
+  {
+    "year": 2004,
+    "genre": "Electronic",
+    "listeners": 3584
+  },
+  {
+    "year": 2004,
+    "genre": "Country",
+    "listeners": 1139
+  },
+  {
+    "year": 2004,
+    "genre": "Reggae",
+    "listeners": 757
+  },
+  {
+    "year": 2004,
+    "genre": "Blues",
+    "listeners": 1373
+  },
+  {
+    "year": 2004,
+    "genre": "R&B",
+    "listeners": 744
+  },
+  {
+    "year": 2005,
+    "genre": "Rock",
+    "listeners": 4787
+  },
+  {
+    "year": 2005,
+    "genre": "Pop",
+    "listeners": 3405
+  },
+  {
+    "year": 2005,
+    "genre": "Jazz",
+    "listeners": 3135
+  },
+  {
+    "year": 2005,
+    "genre": "Classical",
+    "listeners": 4959
+  },
+  {
+    "year": 2005,
+    "genre": "Hip Hop",
+    "listeners": 3016
+  },
+  {
+    "year": 2005,
+    "genre": "Electronic",
+    "listeners": 4198
+  },
+  {
+    "year": 2005,
+    "genre": "Country",
+    "listeners": 1032
+  },
+  {
+    "year": 2005,
+    "genre": "Reggae",
+    "listeners": 3301
+  },
+  {
+    "year": 2005,
+    "genre": "Blues",
+    "listeners": 3610
+  },
+  {
+    "year": 2005,
+    "genre": "R&B",
+    "listeners": 1871
+  },
+  {
+    "year": 2006,
+    "genre": "Rock",
+    "listeners": 4885
+  },
+  {
+    "year": 2006,
+    "genre": "Pop",
+    "listeners": 2003
+  },
+  {
+    "year": 2006,
+    "genre": "Jazz",
+    "listeners": 3702
+  },
+  {
+    "year": 2006,
+    "genre": "Classical",
+    "listeners": 3786
+  },
+  {
+    "year": 2006,
+    "genre": "Hip Hop",
+    "listeners": 1229
+  },
+  {
+    "year": 2006,
+    "genre": "Electronic",
+    "listeners": 793
+  },
+  {
+    "year": 2006,
+    "genre": "Country",
+    "listeners": 1749
+  },
+  {
+    "year": 2006,
+    "genre": "Reggae",
+    "listeners": 2783
+  },
+  {
+    "year": 2006,
+    "genre": "Blues",
+    "listeners": 4983
+  },
+  {
+    "year": 2006,
+    "genre": "R&B",
+    "listeners": 660
+  },
+  {
+    "year": 2007,
+    "genre": "Rock",
+    "listeners": 4153
+  },
+  {
+    "year": 2007,
+    "genre": "Pop",
+    "listeners": 4363
+  },
+  {
+    "year": 2007,
+    "genre": "Jazz",
+    "listeners": 1284
+  },
+  {
+    "year": 2007,
+    "genre": "Classical",
+    "listeners": 4594
+  },
+  {
+    "year": 2007,
+    "genre": "Hip Hop",
+    "listeners": 2976
+  },
+  {
+    "year": 2007,
+    "genre": "Electronic",
+    "listeners": 3562
+  },
+  {
+    "year": 2007,
+    "genre": "Country",
+    "listeners": 2486
+  },
+  {
+    "year": 2007,
+    "genre": "Reggae",
+    "listeners": 1825
+  },
+  {
+    "year": 2007,
+    "genre": "Blues",
+    "listeners": 4538
+  },
+  {
+    "year": 2007,
+    "genre": "R&B",
+    "listeners": 2912
+  },
+  {
+    "year": 2008,
+    "genre": "Rock",
+    "listeners": 3646
+  },
+  {
+    "year": 2008,
+    "genre": "Pop",
+    "listeners": 3173
+  },
+  {
+    "year": 2008,
+    "genre": "Jazz",
+    "listeners": 2643
+  },
+  {
+    "year": 2008,
+    "genre": "Classical",
+    "listeners": 2101
+  },
+  {
+    "year": 2008,
+    "genre": "Hip Hop",
+    "listeners": 1140
+  },
+  {
+    "year": 2008,
+    "genre": "Electronic",
+    "listeners": 4721
+  },
+  {
+    "year": 2008,
+    "genre": "Country",
+    "listeners": 1199
+  },
+  {
+    "year": 2008,
+    "genre": "Reggae",
+    "listeners": 1472
+  },
+  {
+    "year": 2008,
+    "genre": "Blues",
+    "listeners": 777
+  },
+  {
+    "year": 2008,
+    "genre": "R&B",
+    "listeners": 842
+  },
+  {
+    "year": 2009,
+    "genre": "Rock",
+    "listeners": 4198
+  },
+  {
+    "year": 2009,
+    "genre": "Pop",
+    "listeners": 1267
+  },
+  {
+    "year": 2009,
+    "genre": "Jazz",
+    "listeners": 819
+  },
+  {
+    "year": 2009,
+    "genre": "Classical",
+    "listeners": 3448
+  },
+  {
+    "year": 2009,
+    "genre": "Hip Hop",
+    "listeners": 4889
+  },
+  {
+    "year": 2009,
+    "genre": "Electronic",
+    "listeners": 1304
+  },
+  {
+    "year": 2009,
+    "genre": "Country",
+    "listeners": 2763
+  },
+  {
+    "year": 2009,
+    "genre": "Reggae",
+    "listeners": 1221
+  },
+  {
+    "year": 2009,
+    "genre": "Blues",
+    "listeners": 881
+  },
+  {
+    "year": 2009,
+    "genre": "R&B",
+    "listeners": 4092
+  },
+  {
+    "year": 2010,
+    "genre": "Rock",
+    "listeners": 2146
+  },
+  {
+    "year": 2010,
+    "genre": "Pop",
+    "listeners": 3268
+  },
+  {
+    "year": 2010,
+    "genre": "Jazz",
+    "listeners": 2336
+  },
+  {
+    "year": 2010,
+    "genre": "Classical",
+    "listeners": 3807
+  },
+  {
+    "year": 2010,
+    "genre": "Hip Hop",
+    "listeners": 3630
+  },
+  {
+    "year": 2010,
+    "genre": "Electronic",
+    "listeners": 1117
+  },
+  {
+    "year": 2010,
+    "genre": "Country",
+    "listeners": 2272
+  },
+  {
+    "year": 2010,
+    "genre": "Reggae",
+    "listeners": 1194
+  },
+  {
+    "year": 2010,
+    "genre": "Blues",
+    "listeners": 3162
+  },
+  {
+    "year": 2010,
+    "genre": "R&B",
+    "listeners": 1649
+  },
+  {
+    "year": 2011,
+    "genre": "Rock",
+    "listeners": 2012
+  },
+  {
+    "year": 2011,
+    "genre": "Pop",
+    "listeners": 3304
+  },
+  {
+    "year": 2011,
+    "genre": "Jazz",
+    "listeners": 1822
+  },
+  {
+    "year": 2011,
+    "genre": "Classical",
+    "listeners": 4266
+  },
+  {
+    "year": 2011,
+    "genre": "Hip Hop",
+    "listeners": 1385
+  },
+  {
+    "year": 2011,
+    "genre": "Electronic",
+    "listeners": 1514
+  },
+  {
+    "year": 2011,
+    "genre": "Country",
+    "listeners": 2145
+  },
+  {
+    "year": 2011,
+    "genre": "Reggae",
+    "listeners": 4746
+  },
+  {
+    "year": 2011,
+    "genre": "Blues",
+    "listeners": 649
+  },
+  {
+    "year": 2011,
+    "genre": "R&B",
+    "listeners": 4846
+  },
+  {
+    "year": 2012,
+    "genre": "Rock",
+    "listeners": 2364
+  },
+  {
+    "year": 2012,
+    "genre": "Pop",
+    "listeners": 3895
+  },
+  {
+    "year": 2012,
+    "genre": "Jazz",
+    "listeners": 514
+  },
+  {
+    "year": 2012,
+    "genre": "Classical",
+    "listeners": 4520
+  },
+  {
+    "year": 2012,
+    "genre": "Hip Hop",
+    "listeners": 566
+  },
+  {
+    "year": 2012,
+    "genre": "Electronic",
+    "listeners": 526
+  },
+  {
+    "year": 2012,
+    "genre": "Country",
+    "listeners": 2695
+  },
+  {
+    "year": 2012,
+    "genre": "Reggae",
+    "listeners": 1999
+  },
+  {
+    "year": 2012,
+    "genre": "Blues",
+    "listeners": 4550
+  },
+  {
+    "year": 2012,
+    "genre": "R&B",
+    "listeners": 4728
+  },
+  {
+    "year": 2013,
+    "genre": "Rock",
+    "listeners": 4016
+  },
+  {
+    "year": 2013,
+    "genre": "Pop",
+    "listeners": 4840
+  },
+  {
+    "year": 2013,
+    "genre": "Jazz",
+    "listeners": 2204
+  },
+  {
+    "year": 2013,
+    "genre": "Classical",
+    "listeners": 571
+  },
+  {
+    "year": 2013,
+    "genre": "Hip Hop",
+    "listeners": 3593
+  },
+  {
+    "year": 2013,
+    "genre": "Electronic",
+    "listeners": 3792
+  },
+  {
+    "year": 2013,
+    "genre": "Country",
+    "listeners": 2705
+  },
+  {
+    "year": 2013,
+    "genre": "Reggae",
+    "listeners": 2909
+  },
+  {
+    "year": 2013,
+    "genre": "Blues",
+    "listeners": 4315
+  },
+  {
+    "year": 2013,
+    "genre": "R&B",
+    "listeners": 2534
+  },
+  {
+    "year": 2014,
+    "genre": "Rock",
+    "listeners": 1582
+  },
+  {
+    "year": 2014,
+    "genre": "Pop",
+    "listeners": 3958
+  },
+  {
+    "year": 2014,
+    "genre": "Jazz",
+    "listeners": 4222
+  },
+  {
+    "year": 2014,
+    "genre": "Classical",
+    "listeners": 2994
+  },
+  {
+    "year": 2014,
+    "genre": "Hip Hop",
+    "listeners": 2241
+  },
+  {
+    "year": 2014,
+    "genre": "Electronic",
+    "listeners": 4711
+  },
+  {
+    "year": 2014,
+    "genre": "Country",
+    "listeners": 3719
+  },
+  {
+    "year": 2014,
+    "genre": "Reggae",
+    "listeners": 3603
+  },
+  {
+    "year": 2014,
+    "genre": "Blues",
+    "listeners": 3658
+  },
+  {
+    "year": 2014,
+    "genre": "R&B",
+    "listeners": 2403
+  },
+  {
+    "year": 2015,
+    "genre": "Rock",
+    "listeners": 4533
+  },
+  {
+    "year": 2015,
+    "genre": "Pop",
+    "listeners": 4991
+  },
+  {
+    "year": 2015,
+    "genre": "Jazz",
+    "listeners": 3363
+  },
+  {
+    "year": 2015,
+    "genre": "Classical",
+    "listeners": 1888
+  },
+  {
+    "year": 2015,
+    "genre": "Hip Hop",
+    "listeners": 1212
+  },
+  {
+    "year": 2015,
+    "genre": "Electronic",
+    "listeners": 2782
+  },
+  {
+    "year": 2015,
+    "genre": "Country",
+    "listeners": 4435
+  },
+  {
+    "year": 2015,
+    "genre": "Reggae",
+    "listeners": 1887
+  },
+  {
+    "year": 2015,
+    "genre": "Blues",
+    "listeners": 2926
+  },
+  {
+    "year": 2015,
+    "genre": "R&B",
+    "listeners": 2875
+  },
+  {
+    "year": 2016,
+    "genre": "Rock",
+    "listeners": 4096
+  },
+  {
+    "year": 2016,
+    "genre": "Pop",
+    "listeners": 3850
+  },
+  {
+    "year": 2016,
+    "genre": "Jazz",
+    "listeners": 2683
+  },
+  {
+    "year": 2016,
+    "genre": "Classical",
+    "listeners": 4157
+  },
+  {
+    "year": 2016,
+    "genre": "Hip Hop",
+    "listeners": 654
+  },
+  {
+    "year": 2016,
+    "genre": "Electronic",
+    "listeners": 2905
+  },
+  {
+    "year": 2016,
+    "genre": "Country",
+    "listeners": 4797
+  },
+  {
+    "year": 2016,
+    "genre": "Reggae",
+    "listeners": 2079
+  },
+  {
+    "year": 2016,
+    "genre": "Blues",
+    "listeners": 3120
+  },
+  {
+    "year": 2016,
+    "genre": "R&B",
+    "listeners": 2577
+  },
+  {
+    "year": 2017,
+    "genre": "Rock",
+    "listeners": 1456
+  },
+  {
+    "year": 2017,
+    "genre": "Pop",
+    "listeners": 3595
+  },
+  {
+    "year": 2017,
+    "genre": "Jazz",
+    "listeners": 1275
+  },
+  {
+    "year": 2017,
+    "genre": "Classical",
+    "listeners": 2063
+  },
+  {
+    "year": 2017,
+    "genre": "Hip Hop",
+    "listeners": 3374
+  },
+  {
+    "year": 2017,
+    "genre": "Electronic",
+    "listeners": 3849
+  },
+  {
+    "year": 2017,
+    "genre": "Country",
+    "listeners": 2189
+  },
+  {
+    "year": 2017,
+    "genre": "Reggae",
+    "listeners": 1220
+  },
+  {
+    "year": 2017,
+    "genre": "Blues",
+    "listeners": 1585
+  },
+  {
+    "year": 2017,
+    "genre": "R&B",
+    "listeners": 2588
+  },
+  {
+    "year": 2018,
+    "genre": "Rock",
+    "listeners": 1635
+  },
+  {
+    "year": 2018,
+    "genre": "Pop",
+    "listeners": 3705
+  },
+  {
+    "year": 2018,
+    "genre": "Jazz",
+    "listeners": 946
+  },
+  {
+    "year": 2018,
+    "genre": "Classical",
+    "listeners": 4986
+  },
+  {
+    "year": 2018,
+    "genre": "Hip Hop",
+    "listeners": 4295
+  },
+  {
+    "year": 2018,
+    "genre": "Electronic",
+    "listeners": 3397
+  },
+  {
+    "year": 2018,
+    "genre": "Country",
+    "listeners": 3032
+  },
+  {
+    "year": 2018,
+    "genre": "Reggae",
+    "listeners": 1321
+  },
+  {
+    "year": 2018,
+    "genre": "Blues",
+    "listeners": 3252
+  },
+  {
+    "year": 2018,
+    "genre": "R&B",
+    "listeners": 813
+  },
+  {
+    "year": 2019,
+    "genre": "Rock",
+    "listeners": 4368
+  },
+  {
+    "year": 2019,
+    "genre": "Pop",
+    "listeners": 1775
+  },
+  {
+    "year": 2019,
+    "genre": "Jazz",
+    "listeners": 2054
+  },
+  {
+    "year": 2019,
+    "genre": "Classical",
+    "listeners": 4358
+  },
+  {
+    "year": 2019,
+    "genre": "Hip Hop",
+    "listeners": 3718
+  },
+  {
+    "year": 2019,
+    "genre": "Electronic",
+    "listeners": 3208
+  },
+  {
+    "year": 2019,
+    "genre": "Country",
+    "listeners": 974
+  },
+  {
+    "year": 2019,
+    "genre": "Reggae",
+    "listeners": 4433
+  },
+  {
+    "year": 2019,
+    "genre": "Blues",
+    "listeners": 4303
+  },
+  {
+    "year": 2019,
+    "genre": "R&B",
+    "listeners": 1752
+  },
+  {
+    "year": 2020,
+    "genre": "Rock",
+    "listeners": 4368
+  },
+  {
+    "year": 2020,
+    "genre": "Pop",
+    "listeners": 854
+  },
+  {
+    "year": 2020,
+    "genre": "Jazz",
+    "listeners": 4515
+  },
+  {
+    "year": 2020,
+    "genre": "Classical",
+    "listeners": 1296
+  },
+  {
+    "year": 2020,
+    "genre": "Hip Hop",
+    "listeners": 4862
+  },
+  {
+    "year": 2020,
+    "genre": "Electronic",
+    "listeners": 4519
+  },
+  {
+    "year": 2020,
+    "genre": "Country",
+    "listeners": 1191
+  },
+  {
+    "year": 2020,
+    "genre": "Reggae",
+    "listeners": 3225
+  },
+  {
+    "year": 2020,
+    "genre": "Blues",
+    "listeners": 4486
+  },
+  {
+    "year": 2020,
+    "genre": "R&B",
+    "listeners": 4138
+  },
+  {
+    "year": 2021,
+    "genre": "Rock",
+    "listeners": 659
+  },
+  {
+    "year": 2021,
+    "genre": "Pop",
+    "listeners": 877
+  },
+  {
+    "year": 2021,
+    "genre": "Jazz",
+    "listeners": 4636
+  },
+  {
+    "year": 2021,
+    "genre": "Classical",
+    "listeners": 1461
+  },
+  {
+    "year": 2021,
+    "genre": "Hip Hop",
+    "listeners": 2350
+  },
+  {
+    "year": 2021,
+    "genre": "Electronic",
+    "listeners": 4478
+  },
+  {
+    "year": 2021,
+    "genre": "Country",
+    "listeners": 1130
+  },
+  {
+    "year": 2021,
+    "genre": "Reggae",
+    "listeners": 4970
+  },
+  {
+    "year": 2021,
+    "genre": "Blues",
+    "listeners": 892
+  },
+  {
+    "year": 2021,
+    "genre": "R&B",
+    "listeners": 4387
+  },
+  {
+    "year": 2022,
+    "genre": "Rock",
+    "listeners": 780
+  },
+  {
+    "year": 2022,
+    "genre": "Pop",
+    "listeners": 4834
+  },
+  {
+    "year": 2022,
+    "genre": "Jazz",
+    "listeners": 974
+  },
+  {
+    "year": 2022,
+    "genre": "Classical",
+    "listeners": 2410
+  },
+  {
+    "year": 2022,
+    "genre": "Hip Hop",
+    "listeners": 4759
+  },
+  {
+    "year": 2022,
+    "genre": "Electronic",
+    "listeners": 4627
+  },
+  {
+    "year": 2022,
+    "genre": "Country",
+    "listeners": 3855
+  },
+  {
+    "year": 2022,
+    "genre": "Reggae",
+    "listeners": 3475
+  },
+  {
+    "year": 2022,
+    "genre": "Blues",
+    "listeners": 3806
+  },
+  {
+    "year": 2022,
+    "genre": "R&B",
+    "listeners": 3142
+  }
+]
