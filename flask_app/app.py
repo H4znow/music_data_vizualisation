@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -21,6 +21,11 @@ def visualization2():
 @app.route('/visualization3')
 def visualization3():
     return render_template('visualization3.html')
+
+
+# @app.route('/data/<path:filename>')
+# def data(filename):
+#     return send_from_directory('../data', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,55 @@
+/*#ad928c1a*/
+.title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-title{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.visualisation{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap: 60px;
+}
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.year_control{
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    row-gap: 30px;
+    max-height: 150px;
+    padding: 10px;
+}
+
+#genre_control{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 10px;
+}
+
+.range_container{
+    margin-right: 40px;
+}
+
+.form_control_checkbox{
+    margin-right: 10px;
+}
+
+

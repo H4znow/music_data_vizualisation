@@ -1,2 +1,8 @@
 node_modules/
 data/*
+
+venv/*
+venv/
+
+data/
+data/*
