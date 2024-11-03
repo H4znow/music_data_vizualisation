@@ -1,8 +1,6 @@
 d3.json('/static/genre_listeners_sample.json').then(data => {
-  // Dimensions and margins
   const width = 800, height = 500, margin = { top: 20, right: 20, bottom: 50, left: 60 };
 
-  // SVG container with responsive settings
   const svg = d3.select("#visualization2")
     .append("svg")
     .attr("width", width)
@@ -10,35 +8,58 @@ d3.json('/static/genre_listeners_sample.json').then(data => {
     .attr("viewBox", `0 0 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet");
 
-  // Define scales
-  const xScale = d3.scaleBand()
-    .range([margin.left, width - margin.right])
-    .padding(0.1);
+  const xScale = d3.scaleBand().range([margin.left, width - margin.right]).padding(0.2);
+  const yScale = d3.scaleLinear().range([height - margin.bottom, margin.top]);
 
-  const yScale = d3.scaleLinear()
-    .range([height - margin.bottom, margin.top]);
+  const xAxis = svg.append("g").attr("transform", `translate(0,${height - margin.bottom})`);
+  const yAxis = svg.append("g").attr("transform", `translate(${margin.left},0)`);
 
-  // X and Y axes
-  const xAxis = svg.append("g")
-    .attr("transform", `translate(0,${height - margin.bottom})`);
-  
-  const yAxis = svg.append("g")
-    .attr("transform", `translate(${margin.left},0)`);
-
-  // Filter data by year
   let currentYear = d3.min(data, d => d.year);
   const genres = Array.from(new Set(data.map(d => d.genre)));
+  const years = Array.from(new Set(data.map(d => d.year)));
+
+  // Populate year filter
+  const yearFilter = d3.select("#yearFilter");
+  yearFilter.selectAll("option")
+    .data(years)
+    .enter()
+    .append("option")
+    .attr("value", d => d)
+    .text(d => d);
+
+  // Populate genre filter with all options selected initially
+  const genreFilter = d3.select("#genreFilter");
+  genreFilter.selectAll("option")
+    .data(genres)
+    .enter()
+    .append("option")
+    .attr("value", d => d)
+    .text(d => d)
+    .property("selected", true); // Set each genre option as selected initially
+
+  // Get selected values from filters
+  function getSelectedGenres() {
+    return Array.from(genreFilter.node().selectedOptions, option => option.value);
+  }
+
+  function getSelectedYear() {
+    return +yearFilter.node().value;
+  }
 
   function update(year) {
-    const yearData = data.filter(d => d.year === year);
-    
-    xScale.domain(genres);
-    yScale.domain([0, d3.max(yearData, d => d.listeners)]);
+    const selectedGenres = getSelectedGenres();
+    const yearData = data.filter(d => d.year === year && selectedGenres.includes(d.genre));
+
+    console.log("Year:", year);
+    console.log("Selected Genres:", selectedGenres);
+    console.log("Filtered Data:", yearData);
+
+    xScale.domain(yearData.map(d => d.genre)); // Update xScale only for genres in yearData
+    yScale.domain([0, d3.max(yearData, d => d.listeners)] || [0, 1]);
 
     xAxis.transition().call(d3.axisBottom(xScale));
     yAxis.transition().call(d3.axisLeft(yScale));
 
-    // Display current year
     svg.selectAll(".year-label").remove();
     svg.append("text")
       .attr("class", "year-label")
@@ -48,7 +69,6 @@ d3.json('/static/genre_listeners_sample.json').then(data => {
       .attr("font-size", "20px")
       .text(`Year: ${year}`);
 
-    // Bind data and update bars
     const bars = svg.selectAll(".bar")
       .data(yearData, d => d.genre);
 
@@ -69,6 +89,7 @@ d3.json('/static/genre_listeners_sample.json').then(data => {
       .duration(1000)
       .attr("x", d => xScale(d.genre))
       .attr("y", d => yScale(d.listeners))
+      .attr("width", xScale.bandwidth()) // Ensure bars adjust width correctly
       .attr("height", d => yScale(0) - yScale(d.listeners));
 
     bars.exit()
@@ -79,9 +100,12 @@ d3.json('/static/genre_listeners_sample.json').then(data => {
       .remove();
   }
 
-  // Animation loop for updating the chart each year
+  yearFilter.on("change", () => update(getSelectedYear()));
+  genreFilter.on("change", () => update(getSelectedYear()));
+
   d3.interval(() => {
-    update(currentYear);
-    currentYear = currentYear < d3.max(data, d => d.year) ? currentYear + 1 : d3.min(data, d => d.year);
-  }, 2000); // 2000 ms = 2 seconds for each year update
+    const selectedYear = getSelectedYear();
+    update(selectedYear);
+    yearFilter.property("value", selectedYear < d3.max(years) ? selectedYear + 1 : d3.min(years));
+  }, 2000);
 });
