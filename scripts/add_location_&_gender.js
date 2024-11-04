@@ -66,6 +66,6 @@ async function add_location_to_song(song_saved_path, save_file_path) {
       });
 }
 
-song_saved_path = "../data/songs.json"
-save_file_path = "../data/songs_transformed.json"
+song_saved_path = "../data/songs_dates.json"
+save_file_path = "../data/songs_final.json"
 add_location_to_song(song_saved_path, save_file_path);

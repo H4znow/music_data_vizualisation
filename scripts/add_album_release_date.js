@@ -74,5 +74,5 @@ async function add_album_release_date_and_genre_to_song(song_saved_path, save_fi
 }
 
 song_saved_path = "../data/songs.json"
-save_file_path = "../data/songs_final.json"
+save_file_path = "../data/songs_dates.json"
 add_album_release_date_and_genre_to_song(song_saved_path, save_file_path);
