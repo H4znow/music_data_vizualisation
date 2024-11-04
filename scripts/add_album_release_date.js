@@ -34,7 +34,12 @@ async function getAlbumReleaseDateAndGenre(album_id) {
 
         if (data.publicationDate) publicationDate = data.publicationDate;
         if (data.id_artist) id_artist = data.id_artist;
-        if (data.genre) albumGenre = data.genre;
+        if (data.genre){
+            if (Array.isArray(data.genre) && data.genre.length > 0)
+                albumGenre = data.genre[0];
+            else
+                albumGenre = data.genre;
+        } 
     } catch (error) {
         console.error(`Failed to fetch album data for ID ${album_id}:`, error);
     }
@@ -65,7 +70,8 @@ async function addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath) {
 
     // Add album release date and genre to each song
     for (let i = 0; i < data.length; i++) {
-        if (!data[i].hasOwnProperty('releaseDate') && data[i].hasOwnProperty('id_album')) {
+        let isGenrePresent = !data[i].hasOwnProperty('genre') || (data[i].hasOwnProperty('genre') && Array.isArray(data[i]["genre"]) && data[i]["genre"].length == 0)
+        if ((!data[i].hasOwnProperty('releaseDate') || !isGenrePresent) && data[i].hasOwnProperty('id_album')) {
             const id_album = data[i].id_album;
 
             if (!albumIdToPublicationYear[id_album]) {
