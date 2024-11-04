@@ -1,78 +1,95 @@
 const fs = require('node:fs');
 const https = require('https');
 
-const UNK_VALUE = "UNK"
+const UNK_VALUE = "UNK";
 
 function sleep(ms) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, ms);
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchJSON(url) {
+    return new Promise((resolve, reject) => {
+        https.get(url, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(data));
+                } catch (error) {
+                    reject('Error parsing JSON');
+                }
+            });
+        }).on('error', (error) => reject(error));
     });
 }
 
-async function get_album_release_date_and_genre(album_id){
-    url = "https://wasabi.i3s.unice.fr/api/v1/album/id/" + album_id;
+async function getAlbumReleaseDateAndGenre(album_id) {
+    const url = `https://wasabi.i3s.unice.fr/api/v1/album/id/${album_id}`;
+    let publicationDate = UNK_VALUE;
+    let id_artist = UNK_VALUE;
+    let albumGenre = UNK_VALUE;
 
-    let resp = await fetch(url)
-    let data = await resp.json()
+    try {
+        const data = await fetchJSON(url);
 
-    let publicationDate = UNK_VALUE
-    let id_artist = UNK_VALUE
-    let albumGenre =UNK_VALUE
-    if (data.hasOwnProperty("publicationDate")){
-        publicationDate = data["publicationDate"]
+        if (data.publicationDate) publicationDate = data.publicationDate;
+        if (data.id_artist) id_artist = data.id_artist;
+        if (data.genre) albumGenre = data.genre;
+    } catch (error) {
+        console.error(`Failed to fetch album data for ID ${album_id}:`, error);
     }
-    if (data.hasOwnProperty("id_artist")){
-        id_artist = data["id_artist"]
-    }
-    if (data.hasOwnProperty("genre")){
-        albumGenre = data["genre"]
-    }
+
     return {
-        "id_artist": id_artist,
-        "publicationDate":  publicationDate,
-        "albumGenre": albumGenre
-    }
+        id_artist,
+        publicationDate,
+        albumGenre
+    };
 }
 
-async function add_album_release_date_and_genre_to_song(song_saved_path, save_file_path) {
-    let albumIdToPublicationYear = {}
+async function addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath) {
+    const albumIdToPublicationYear = {};
 
-    data = fs.readFileSync(song_saved_path, 'utf8');
+    // Ensure the save file exists
+    if (!fs.existsSync(saveFilePath)) {
+        fs.writeFileSync(saveFilePath, JSON.stringify([]));
+    }
 
-    data = JSON.parse(data);
-    fieldName = "albumReleaseDate"
-    idFieldName = "id_artist"
-    albumGenreFieldName = "albumGenre"
-    for (let i = 0; i < data.length; i++){
-        if (!data[i].hasOwnProperty("releaseDate")){
-            if (data[i].hasOwnProperty("id_album")){
-                let id_album = data[i]["id_album"]
-                if (!albumIdToPublicationYear.hasOwnProperty(id_album)){
-                    console.log(i)
-                    await sleep(2000);
-                    albumIdToPublicationYear[id_album] = await get_album_release_date_and_genre(id_album)
-                }
-                if (albumIdToPublicationYear[id_album]["publicationDate"] != UNK_VALUE)
-                    data[i][fieldName] = albumIdToPublicationYear[id_album]["publicationDate"]
-                if(albumIdToPublicationYear[id_album]["id_artist"] != UNK_VALUE)
-                    data[i][idFieldName] = albumIdToPublicationYear[id_album]["id_artist"]
-                if(albumIdToPublicationYear[id_album]["albumGenre"] != UNK_VALUE)
-                    data[i][albumGenreFieldName] = albumIdToPublicationYear[id_album]["albumGenre"]
+    // Read and parse song data
+    let data;
+    try {
+        data = JSON.parse(fs.readFileSync(songSavedPath, 'utf8'));
+    } catch (error) {
+        console.error('Error reading song data:', error);
+        return;
+    }
+
+    // Add album release date and genre to each song
+    for (let i = 0; i < data.length; i++) {
+        if (!data[i].hasOwnProperty('releaseDate') && data[i].hasOwnProperty('id_album')) {
+            const id_album = data[i].id_album;
+
+            if (!albumIdToPublicationYear[id_album]) {
+                console.log(`Fetching album data for index ${i}`);
+                await sleep(2000); // Delay to avoid rate limiting
+                albumIdToPublicationYear[id_album] = await getAlbumReleaseDateAndGenre(id_album);
             }
+
+            const albumData = albumIdToPublicationYear[id_album];
+            if (albumData.publicationDate !== UNK_VALUE) data[i].albumReleaseDate = albumData.publicationDate;
+            if (albumData.id_artist !== UNK_VALUE) data[i].id_artist = albumData.id_artist;
+            if (albumData.albumGenre !== UNK_VALUE) data[i].albumGenre = albumData.albumGenre;
         }
-            
     }
-    // console.log(albumIdToPublicationYear)
-    data_str = JSON.stringify(data)
-    fs.writeFile(save_file_path, data_str, { flag: 'w+' },  err => {
-        if (err) {
-          console.error(err);
-        } else {
-          // file written successfully
-        }
-      });
+
+    // Write updated data to save file
+    try {
+        fs.writeFileSync(saveFilePath, JSON.stringify(data, null, 2));
+        console.log('Data written successfully to', saveFilePath);
+    } catch (error) {
+        console.error('Error writing to save file:', error);
+    }
 }
 
-song_saved_path = "../data/songs.json"
-save_file_path = "../data/songs_dates.json"
-add_album_release_date_and_genre_to_song(song_saved_path, save_file_path);
+const songSavedPath = './data/songs.json';
+const saveFilePath = './data/songs_dates.json';
+addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath);
