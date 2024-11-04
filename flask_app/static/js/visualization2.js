@@ -1,5 +1,5 @@
 d3.json('/static/songs_by_year_and_genre.json').then(data => {
-  const width = 800, height = 500, margin = { top: 20, right: 20, bottom: 80, left: 60 }; // Increase bottom margin for diagonal labels
+  const width = 800, height = 500, margin = { top: 20, right: 20, bottom: 80, left: 60 };
 
   const svg = d3.select("#visualization2")
     .append("svg")
@@ -46,8 +46,34 @@ d3.json('/static/songs_by_year_and_genre.json').then(data => {
     return +yearFilter.node().value;
   }
 
+  // Check if a year has non-zero counts for selected genres
+  function hasNonZeroCounts(year, selectedGenres) {
+    const yearData = data.filter(d => d.year === year && selectedGenres.includes(d.genre));
+    return yearData.some(d => d.count > 0);
+  }
+
+  // Find the next year with non-zero counts for the selected genres
+  function findNextNonZeroYear(startYear, selectedGenres) {
+    const sortedYears = years.filter(y => y >= startYear).sort((a, b) => a - b);
+    for (let y of sortedYears) {
+      if (hasNonZeroCounts(y, selectedGenres)) {
+        return y;
+      }
+    }
+    return startYear; // Fallback to the current year if none found
+  }
+
   function update(year) {
     const selectedGenres = getSelectedGenres();
+    
+    // Skip to the next year if all selected genres have zero count for the current year
+    if (!hasNonZeroCounts(year, selectedGenres)) {
+      const nextYear = findNextNonZeroYear(year + 1, selectedGenres);
+      yearFilter.property("value", nextYear);
+      update(nextYear);
+      return;
+    }
+
     const yearData = data.filter(d => d.year === year && selectedGenres.includes(d.genre));
 
     console.log("Year:", year);
@@ -58,13 +84,24 @@ d3.json('/static/songs_by_year_and_genre.json').then(data => {
     yScale.domain([0, d3.max(yearData, d => d.count)] || [0, 1]);
 
     xAxis.transition().call(d3.axisBottom(xScale))
-      .selectAll("text") // Select all x-axis labels
-      .style("text-anchor", "end") // Anchor the text at the end
-      .attr("dx", "-0.8em") // Adjust x position
-      .attr("dy", "0.15em") // Adjust y position
-      .attr("transform", "rotate(-45)"); // Rotate the text -45 degrees
+      .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-0.8em")
+      .attr("dy", "0.15em")
+      .attr("transform", "rotate(-45)");
 
     yAxis.transition().call(d3.axisLeft(yScale));
+
+    svg.selectAll(".background-year").remove();
+    svg.append("text")
+      .attr("class", "background-year")
+      .attr("x", width / 2)
+      .attr("y", height / 2)
+      .attr("text-anchor", "middle")
+      .attr("font-size", "150px")
+      .attr("fill", "rgba(200, 200, 200, 0.3)")
+      .attr("pointer-events", "none")
+      .text(year);
 
     svg.selectAll(".year-label").remove();
     svg.append("text")
@@ -85,7 +122,7 @@ d3.json('/static/songs_by_year_and_genre.json').then(data => {
       .attr("y", yScale(0))
       .attr("width", xScale.bandwidth())
       .attr("height", 0)
-      .style("fill", "steelblue")
+      .style("fill", "rgba(70, 130, 180, 0.7)")
       .transition()
       .duration(1000)
       .attr("y", d => yScale(d.count))
