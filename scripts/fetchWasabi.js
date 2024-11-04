@@ -2,14 +2,14 @@ const https = require('https');
 const fs = require('fs');
 
 // File path to save the data
-const filePath = './data/songs_data_1k.json'
+const filePath = './data/songs.json'
 
 // Function to fetch artists using https module
 function fetchArtists(start = 0) {
-    const url = `https://wasabi.i3s.unice.fr/api/v1/artist_all/${start}`;
+    const url = `https://wasabi.i3s.unice.fr/api/v1/song_all/${start}?project=_id,name,genre,title,releaseDate,publicationDate`;
     const batchSize = 200;
-    const limit = 1000; // Limit to the first 1000 artists
-
+    // const limit = 100; // Limit to the first 1000 artists
+    const limit = 1000000; // no limit virtually
     // Make the HTTPS request
     https.get(url, (response) => {
         let data = '';
@@ -25,24 +25,24 @@ function fetchArtists(start = 0) {
                 // Check if the content is JSON
                 const contentType = response.headers['content-type'];
                 if (contentType && contentType.includes('application/json')) {
-                    const artists = JSON.parse(data);
-                    console.log(`Fetched ${artists.length} artists from ${start} to ${start + artists.length}`);
+                    const songs = JSON.parse(data);
+                    console.log(`Fetched ${songs.length} songs from ${start} to ${start + songs.length}`);
 
                     // Append the artists data to the file
-                    fs.appendFile(filePath, JSON.stringify(artists, null, 2) + '\n', (err) => {
+                    fs.appendFile(filePath, JSON.stringify(songs, null, 2) + '\n', (err) => {
                         if (err) {
                             console.error('Error writing to file:', err);
                         }
                     });
 
                     // If fewer than batchSize artists are returned, we're done
-                    if (artists.length < batchSize || start >= limit) {
-                        console.log('Finished fetching all artists.');
+                    if (songs.length < batchSize || start >= limit) {
+                        console.log('Finished fetching all songs.');
                         return;
                     }
 
                     // Fetch the next batch after a delay to avoid rate limiting
-                    setTimeout(() => fetchArtists(start + batchSize), 1000); // 1 second delay
+                    setTimeout(() => fetchArtists(start + batchSize), 2000); // 1 second delay
 
                 } else {
                     // Handle non-JSON response (e.g., error page or rate limit)
