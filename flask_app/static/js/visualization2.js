@@ -1,5 +1,5 @@
-d3.json('/static/genre_listeners_sample.json').then(data => {
-  const width = 800, height = 500, margin = { top: 20, right: 20, bottom: 50, left: 60 };
+d3.json('/static/songs_by_year_and_genre.json').then(data => {
+  const width = 800, height = 500, margin = { top: 20, right: 20, bottom: 80, left: 60 }; // Increase bottom margin for diagonal labels
 
   const svg = d3.select("#visualization2")
     .append("svg")
@@ -54,10 +54,16 @@ d3.json('/static/genre_listeners_sample.json').then(data => {
     console.log("Selected Genres:", selectedGenres);
     console.log("Filtered Data:", yearData);
 
-    xScale.domain(yearData.map(d => d.genre)); // Update xScale only for genres in yearData
-    yScale.domain([0, d3.max(yearData, d => d.listeners)] || [0, 1]);
+    xScale.domain(yearData.map(d => d.genre));
+    yScale.domain([0, d3.max(yearData, d => d.count)] || [0, 1]);
 
-    xAxis.transition().call(d3.axisBottom(xScale));
+    xAxis.transition().call(d3.axisBottom(xScale))
+      .selectAll("text") // Select all x-axis labels
+      .style("text-anchor", "end") // Anchor the text at the end
+      .attr("dx", "-0.8em") // Adjust x position
+      .attr("dy", "0.15em") // Adjust y position
+      .attr("transform", "rotate(-45)"); // Rotate the text -45 degrees
+
     yAxis.transition().call(d3.axisLeft(yScale));
 
     svg.selectAll(".year-label").remove();
@@ -82,15 +88,15 @@ d3.json('/static/genre_listeners_sample.json').then(data => {
       .style("fill", "steelblue")
       .transition()
       .duration(1000)
-      .attr("y", d => yScale(d.listeners))
-      .attr("height", d => yScale(0) - yScale(d.listeners));
+      .attr("y", d => yScale(d.count))
+      .attr("height", d => yScale(0) - yScale(d.count));
 
     bars.transition()
       .duration(1000)
       .attr("x", d => xScale(d.genre))
-      .attr("y", d => yScale(d.listeners))
-      .attr("width", xScale.bandwidth()) // Ensure bars adjust width correctly
-      .attr("height", d => yScale(0) - yScale(d.listeners));
+      .attr("y", d => yScale(d.count))
+      .attr("width", xScale.bandwidth())
+      .attr("height", d => yScale(0) - yScale(d.count));
 
     bars.exit()
       .transition()
