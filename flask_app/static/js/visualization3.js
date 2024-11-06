@@ -9,12 +9,24 @@ function updateLimitSlider(min, max, slider_type){
     if (min < 0)
       min = 0
     let slider = "";
-    if (slider_type == "from")
-      slider = document.querySelector('#fromSlider');
-    else
-      slider = document.querySelector('#toSlider');
-    slider.setAttribute("min", min)
-    slider.setAttribute("max", max)
+    let sliderInput = "";
+    let value = min
+    if (slider_type == "from"){
+        slider = document.querySelector('#fromSlider');
+        sliderInput = document.querySelector('#fromInput');
+    } else {
+        slider = document.querySelector('#toSlider');
+        sliderInput = document.querySelector('#toInput');
+        value++;
+    }
+      
+    slider.max = max 
+    slider.value = value
+    slider.min = min 
+
+    sliderInput.max = max 
+    sliderInput.value = value
+    sliderInput.min = min 
 }
 
 function addGenreFilters(genres){
@@ -40,9 +52,9 @@ function addGenreFilters(genres){
 
 const UNK_VALUE = "UNK"
 // set the dimensions and margins of the graph
-var margin = {top: 100, right: 30, bottom: 20, left: 50},
-    width = 600 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 150, right: 80, bottom: 50, left: 70},
+    width = 850 - margin.left - margin.right,
+    height = 650 - margin.top - margin.bottom;
     
 
 var svg = d3.select("#my_dataviz")
@@ -54,7 +66,7 @@ var svg = d3.select("#my_dataviz")
             "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("../data/songs_final_saved.json").then(data => {
-    let selectedGenres = ["Death Core", "Heavy Metal"]
+    let selectedGenres = ["Deathcore", "Heavy Metal"]
     let selectedYear = [2008, 2010, 2011, UNK_VALUE]
     
     let allGenres = new Set()
@@ -70,24 +82,44 @@ d3.json("../data/songs_final_saved.json").then(data => {
         return object
     }
 
-    function computeYMax(){
-        maxPerYear = yearAndGenre.map(function (elt) {
+    function computeYMax(data){
+        maxPerYear = data.map(function (elt) {
             return Math.max(
                 ...Object.keys(elt).filter(key => selectedGenres.includes(key))
                 .map(goodKey => elt[goodKey])
             )
         })
     
-        return Math.max(...maxPerYear)
+        max = Math.max(...maxPerYear)
+        if (max == 0)
+            return 1
+        if (Number.isFinite(max))
+            return max
+        else
+            return 1
     }
 
     function filterGroupElt(object){
         return object.filter(elt => selectedYear.includes(elt["year"]))
     }
 
+    function fillMissingResult(data, allGenres){
+        genres = Array.from(allGenres)
+        data.map(obj => {
+            for (let i = 0; i < genres.length; i++){
+                if (!obj.hasOwnProperty(genres[i]))
+                    obj[genres[i]] = 0
+            }
+        })
+        return data
+    }
+
     function createOrUpdateLegend(selectedGenres){
+        svg.selectAll(".legend").remove()
+
         yOffset = -15 * selectedGenres.length
         const legend = svg.append("g")
+            .attr("class", "legend")
             .attr("transform", `translate(${width - 40},${yOffset - 15})`);
     
         selectedGenres.forEach((subgroup, i) => {
@@ -98,7 +130,6 @@ d3.json("../data/songs_final_saved.json").then(data => {
                 .attr("width", 10)
                 .attr("height", 10)
                 .attr("fill", color(subgroup));
-            
             legend.append("text")
                 .attr("x", 15)
                 .attr("y", i * ySpacing + 9) // Align text with rectangles
@@ -125,7 +156,8 @@ d3.json("../data/songs_final_saved.json").then(data => {
         if (!yearToGenre.hasOwnProperty(year)){
             yearToGenre[year] = {}
             yearToGenre[year]["year"] = year
-            years.add(year)
+            if (year != UNK_VALUE)
+                years.add(year)
         }
 
         // We create a new key with the album release year if we didn't find a release year and if not present
@@ -135,31 +167,41 @@ d3.json("../data/songs_final_saved.json").then(data => {
         }
 
 
-        if (data[i].hasOwnProperty("genres")){
-            let genres = data[i]["genres"]
-            createOrIncrease(yearToGenre, year, UNK_VALUE)
-            for (let j = 0; j < genres.length; j++){
-                let genre = genres[j]
-                if (genre.length === 0) 
-                    continue
-                allGenres.add(genre)
-                createOrIncrease(yearToGenre, year, genre)
-
-                // we update the number of song with this genre for this year
-                if (albumReleaseDate != UNK_VALUE )
-                    createOrIncrease(albumReleaseDateToGenre, year, genre)
+        if (data[i].hasOwnProperty("genres") || data[i].hasOwnProperty("albumGenre")){
+            let genres = UNK_VALUE
+            shouldGetGenreFromAlbum = false
+            if(data[i].hasOwnProperty("genres")){
+                genres = data[i]["genres"]
+                if (Array.isArray(genres) && genres.length > 0)
+                    shouldGetGenreFromAlbum = true
+                if (typeof genres === "string" && genres.length > 0)
+                    shouldGetGenreFromAlbum = true
             }
-        } else{
-            if (data[i].hasOwnProperty("albumGenre")){
-                let genre = data[i]["albumGenre"]
-                if (genre.length === 0) 
-                    continue
-                allGenres.add(genre)
-                createOrIncrease(yearToGenre, year, genre)
+            if(data[i].hasOwnProperty("albumGenre") && !shouldGetGenreFromAlbum){
+                genres = data[i]["albumGenre"]
             }
-        }
+            if (typeof genres === "string" && genres.length > 0){
+                allGenres.add(genres)
+                createOrIncrease(yearToGenre, year, genres)
+            } else{
+                if (Array.isArray(genres) && genres.length > 0){
+                    let genre = null;
+                    for (let j = 0; j < genres.length; j++){
+                        genre = genres[j]
+                        allGenres.add(genre)
+                        createOrIncrease(yearToGenre, year, genres)
+        
+                        // we update the number of song with this genre for this year
+                        if (albumReleaseDate != UNK_VALUE && shouldGetGenreFromAlbum )
+                            createOrIncrease(albumReleaseDateToGenre, year, genre)
+                    }
+                } else{
+                    createOrIncrease(yearToGenre, year, UNK_VALUE)
+                    allGenres.add(UNK_VALUE)
+                }
+            }
+        } 
     }
-
 
     // Conversion of our object to the good form for d3js
     let yearAndGenre = Object.keys( yearToGenre ).sort(function( a, b ) {
@@ -195,10 +237,12 @@ d3.json("../data/songs_final_saved.json").then(data => {
         return data[ sortedKey ];
     });
 
-    ymax = computeYMax()
-
+    yearAndGenre = fillMissingResult(yearAndGenre, allGenres)
     selectedYearAndGenre = filterGroupElt(yearAndGenre) 
     selectedAlbumReleaseYearGenre = filterGroupElt(albumReleaseYearGenre)
+
+    ymax = computeYMax(selectedYearAndGenre)
+
 
     var x = d3.scaleBand()
         .domain(selectedYear)
@@ -206,14 +250,31 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .padding([0.2])
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickSize(0));
+        .attr("class", "x-axis")
+        .call(d3.axisBottom(x).tickSize(0))
+        .append("text")
+        .attr("class", "axis-title")
+        .attr("x", width/2)
+        .attr("y", 40)
+        .attr("fill", "black")
+        .style("font-size", "14px")
+        .text("Période (Année)");
 
-    // Add Y axis
-    var y = d3.scaleLinear()
-        .domain([0, ymax])
-        .range([ height, 0 ]);
-    svg.append("g")
-        .call(d3.axisLeft(y));
+        // Add Y axis
+        var y = d3.scaleLinear()
+            .domain([0, ymax])
+            .range([ height, 0 ]);
+        svg.append("g")
+            .attr("class", "y-axis")
+            .call(d3.axisLeft(y))
+            .append("text")
+            .attr("class", "axis-title")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height/2)
+            .attr("y", -40)
+            .attr("fill", "black")
+            .style("font-size", "14px")
+            .text("Fréquence");
 
      // Another scale for subgroup position?
     var xSubgroup = d3.scaleBand()
@@ -224,16 +285,22 @@ d3.json("../data/songs_final_saved.json").then(data => {
       // color palette = one color per subgroup
     var color = d3.scaleOrdinal()
         .domain(selectedGenres)
-        .range(['#e41a1c','#377eb8','#4daf4a'])
+        .range(['#e41a1c',
+            '#377eb8','#4daf4a', "#ff1414", "#c72b2e", "#fbdaf",
+            "#a6e1ff", "#0f51b7", "#843ba1", "#439660", "#8b6744",
+            "#c9cbce", "#b27569", "#ff7f00", "#981ade", "#f69087",
+            "#e23512",
+        ])
 
-    console.log("selectedYearAndGenre: ", selectedYearAndGenre)
     // Show the bars
     svg.append("g")
+        .attr("id", "graph")
         .selectAll("g")
         // Enter in data = loop group per group
         .data(selectedYearAndGenre)
         .enter()
         .append("g")
+        .attr("class", "barGroup")
         .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
         .selectAll("rect")
         .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
@@ -243,14 +310,18 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .attr("width", xSubgroup.bandwidth())
         .attr("height", function(d) { return height - y(d.value); })
         .attr("data-legend", function(d) { return d.key})
+        .attr("class", "bar")
         .attr("fill", function(d) { return color(d.key); });
 
     // Adding legend
     createOrUpdateLegend(selectedGenres)
 
-    minYear = Math.min(...years)
-    maxYear = Math.max(...years)
+    filterYears = Array.from(years).filter( key => isFinite(key) && key > 1800)
+    minYear = Math.min(...filterYears)
+    maxYear = Math.max(...filterYears)
+
     if (!isNaN(minYear) && !isNaN(maxYear)){
+        
         // We update the filter for the possible years
         updateLimitSlider(minYear, maxYear, "from")
         updateLimitSlider(minYear, maxYear, "to")
@@ -264,25 +335,32 @@ d3.json("../data/songs_final_saved.json").then(data => {
         selectedGenres = subGroup
         // Update the subgroups domain for the xSubgroup scale
         xSubgroup.domain(subGroup);
+
+        ymax = computeYMax(selectedYearAndGenre)
+        y.domain([0, ymax])
+
+        svg.selectAll(".barGroup")
+            .remove()
         
-        // Bind the new subgroup data to the bars
-        const bars = svg.selectAll("g")
-            .data(selectedYearAndGenre)  // Re-bind the data
-            .join("g")   // Update existing groups
-                .attr("transform", d => `translate(${x(d.year)},0)`)  // Position groups
-
-        bars.selectAll("rect")
-        .data(d => subGroup.map(key => ({ key: key, value: d[key] })))
-        .join("rect")  // Update existing rects
-            .transition().duration(500)  // Smooth transition
-            .attr("x", d => xSubgroup(d.key))
-            .attr("y", d => y(d.value))
+        graph = svg.selectAll("#graph")
+            .selectAll("g")
+            .data(selectedYearAndGenre)
+            .enter()
+            .append("g")
+            .attr("class", "barGroup")
+            .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
+            .selectAll("rect")
+            .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
+            .enter().append("rect")
+            .attr("x", function(d) { return xSubgroup(d.key); })
+            .attr("y", function(d) { return y(d.value); })
             .attr("width", xSubgroup.bandwidth())
-            .attr("height", d => height - y(d.value))
-            .attr("fill", d => color(d.key));
+            .attr("height", function(d) { return height - y(d.value); })
+            .attr("data-legend", function(d) { return d.key})
+            .attr("class", "bar")
+            .attr("fill", function(d) { return color(d.key); });
 
-        ymax = computeYMax()
-        y.domain([0, ymax]);
+
         // Update the x-axis
         svg.select(".x-axis")
         .transition()
@@ -334,56 +412,47 @@ d3.json("../data/songs_final_saved.json").then(data => {
         
         // Update x scale domain with new group names
         x.domain(selectedYear);
-        // Filter data to only include the new groups
-        const filteredData = data.filter(d => selectedGenres.includes(d.year));
+
+        selectedYearAndGenre = filterGroupElt(yearAndGenre) 
+
+        ymax = computeYMax(selectedYearAndGenre)
+        y.domain([0, ymax])
         
-        // Bind the filtered data to group containers
-        const bars = svg.selectAll("g.group")
-            .data(filteredData, d => d.year);  // Use group name as key
-        
-        // Enter new group containers if there are additional groups
-        const barsEnter = bars.enter()
+        svg.selectAll(".barGroup")
+            .remove()
+
+        graph = svg.selectAll("#graph")
+            .selectAll("g")
+            .data(selectedYearAndGenre)
+            .enter()
             .append("g")
-            .attr("class", "group")
-            .attr("transform", d => `translate(${x(d.year)}, 0)`);
-
-        // Append rects for each subgroup within each group
-        barsEnter.selectAll("rect")
-        .data(d => selectedGenres.map(key => ({ key: key, value: d[key] || 0 })))
-        .enter().append("rect")
-            .attr("x", d => xSubgroup(d.key))
-            .attr("y", d => y(d.value))
+            .attr("class", "barGroup")
+            .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
+            .selectAll("rect")
+            .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
+            .enter().append("rect")
+            .attr("x", function(d) { return xSubgroup(d.key); })
+            .attr("y", function(d) { return y(d.value); })
             .attr("width", xSubgroup.bandwidth())
-            .attr("height", d => height - y(d.value))
-            .attr("fill", d => color(d.key));
+            .attr("height", function(d) { return height - y(d.value); })
+            .attr("data-legend", function(d) { return d.key})
+            .attr("class", "bar")
+            .attr("fill", function(d) { return color(d.key); });
 
-        // Update existing bars (for existing groups)
-        bars.attr("transform", d => `translate(${x(d.year)}, 0)`);
 
-        bars.selectAll("rect")
-        .data(d => selectedGenres.map(key => ({ key: key, value: d[key] || 0 })))
-        .transition().duration(500)  // Smooth transition for updating values
-        .attr("x", d => xSubgroup(d.key))
-        .attr("y", d => y(d.value))
-        .attr("width", xSubgroup.bandwidth())
-        .attr("height", d => height - y(d.value))
-        .attr("fill", d => color(d.key));
-
-        // Remove old groups
-        bars.exit().remove();
-
-        // Update the x-axis to match the new groups
+        // Update the x-axis
         svg.select(".x-axis")
-            .transition().duration(500)
-            .call(d3.axisBottom(x));
+        .transition()
+        .duration(500)
+        .call(d3.axisBottom(x));  // Redraw x-axis
 
-        // Update the y-axis in case the data range has changed
-        ymax = computeYMax()
-        y.domain([0, ymax]);
-
+        // Update the y-axis with the new scale
         svg.select(".y-axis")
-            .transition().duration(500)
-            .call(d3.axisLeft(y));
+        .transition()
+        .duration(500)
+        .call(d3.axisLeft(y));
+        
+        createOrUpdateLegend(selectedGenres)
     }
 
     // Add event listeners to checkbox representing unknown value for groups
@@ -395,6 +464,12 @@ d3.json("../data/songs_final_saved.json").then(data => {
         'change', updateGroup
     );
     document.querySelector('#toSlider').addEventListener(
+        'change', updateGroup
+    );
+    document.querySelector('#fromInput').addEventListener(
+        'change', updateGroup
+    );
+    document.querySelector('#toInput').addEventListener(
         'change', updateGroup
     );
 
