@@ -1,0 +1,2162 @@
+[
+  {
+    "year": 1998,
+    "genre": "Unknown",
+    "count": 21
+  },
+  {
+    "year": 2006,
+    "genre": "Unknown",
+    "count": 161
+  },
+  {
+    "year": 2007,
+    "genre": "Unknown",
+    "count": 116
+  },
+  {
+    "year": "Unknown",
+    "genre": "Unknown",
+    "count": 1434
+  },
+  {
+    "year": 2015,
+    "genre": "Unknown",
+    "count": 113
+  },
+  {
+    "year": 2016,
+    "genre": "Unknown",
+    "count": 41
+  },
+  {
+    "year": 2002,
+    "genre": "Unknown",
+    "count": 16
+  },
+  {
+    "year": 2005,
+    "genre": "Unknown",
+    "count": 51
+  },
+  {
+    "year": 2013,
+    "genre": "Unknown",
+    "count": 35
+  },
+  {
+    "year": 2012,
+    "genre": "Unknown",
+    "count": 38
+  },
+  {
+    "year": 2008,
+    "genre": "Unknown",
+    "count": 82
+  },
+  {
+    "year": 2009,
+    "genre": "Unknown",
+    "count": 166
+  },
+  {
+    "year": null,
+    "genre": "Unknown",
+    "count": 346
+  },
+  {
+    "year": 2014,
+    "genre": "Unknown",
+    "count": 63
+  },
+  {
+    "year": 2011,
+    "genre": "Unknown",
+    "count": 118
+  },
+  {
+    "year": 2000,
+    "genre": "Unknown",
+    "count": 40
+  },
+  {
+    "year": 2004,
+    "genre": "Unknown",
+    "count": 76
+  },
+  {
+    "year": 2010,
+    "genre": "Unknown",
+    "count": 89
+  },
+  {
+    "year": 2003,
+    "genre": "Unknown",
+    "count": 42
+  },
+  {
+    "year": 2001,
+    "genre": "Unknown",
+    "count": 18
+  },
+  {
+    "year": 2017,
+    "genre": "Unknown",
+    "count": 3
+  },
+  {
+    "year": 1978,
+    "genre": "Unknown",
+    "count": 28
+  },
+  {
+    "year": 1997,
+    "genre": "Unknown",
+    "count": 27
+  },
+  {
+    "year": 2010,
+    "genre": "Pop punk",
+    "count": 2
+  },
+  {
+    "year": 2014,
+    "genre": "Pop punk",
+    "count": 1
+  },
+  {
+    "year": 2014,
+    "genre": "Post-hardcore",
+    "count": 1
+  },
+  {
+    "year": 1995,
+    "genre": "Unknown",
+    "count": 10
+  },
+  {
+    "year": 2007,
+    "genre": "Adult album alternative",
+    "count": 3
+  },
+  {
+    "year": 2009,
+    "genre": "Adult album alternative",
+    "count": 1
+  },
+  {
+    "year": 2009,
+    "genre": "Pop music",
+    "count": 1
+  },
+  {
+    "year": "Unknown",
+    "genre": "Pop music",
+    "count": 1
+  },
+  {
+    "year": "Unknown",
+    "genre": "Christmas music",
+    "count": 1
+  },
+  {
+    "year": "Unknown",
+    "genre": "Rhythm and blues",
+    "count": 1
+  },
+  {
+    "year": "Unknown",
+    "genre": "Jazz",
+    "count": 1
+  },
+  {
+    "year": "Unknown",
+    "genre": "Indie rock",
+    "count": 1
+  },
+  {
+    "year": "Unknown",
+    "genre": "Acoustic music",
+    "count": 1
+  },
+  {
+    "year": 2008,
+    "genre": "New wave music",
+    "count": 2
+  },
+  {
+    "year": 2003,
+    "genre": "Synthpop",
+    "count": 2
+  },
+  {
+    "year": 1990,
+    "genre": "Unknown",
+    "count": 3
+  },
+  {
+    "year": 2003,
+    "genre": "New wave music",
+    "count": 4
+  },
+  {
+    "year": 2003,
+    "genre": "Dark wave",
+    "count": 1
+  },
+  {
+    "year": 2013,
+    "genre": "Indie pop",
+    "count": 2
+  },
+  {
+    "year": 1999,
+    "genre": "Unknown",
+    "count": 18
+  },
+  {
+    "year": 1992,
+    "genre": "Unknown",
+    "count": 14
+  },
+  {
+    "year": 2000,
+    "genre": "Alternative metal",
+    "count": 2
+  },
+  {
+    "year": 2003,
+    "genre": "Alternative rock",
+    "count": 4
+  },
+  {
+    "year": 2003,
+    "genre": "Alternative metal",
+    "count": 2
+  },
+  {
+    "year": 1998,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1998,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2006,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2007,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": "Unknown",
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2015,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2016,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2002,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2005,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2013,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2012,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2008,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2009,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": null,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2014,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2011,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2000,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2004,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2010,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2003,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2001,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 2017,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1978,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1997,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1995,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1990,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1999,
+    "genre": "Alternative rock",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Pop punk",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Post-hardcore",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Adult album alternative",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Pop music",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Christmas music",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Rhythm and blues",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Jazz",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Indie rock",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Acoustic music",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "New wave music",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Synthpop",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Dark wave",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Indie pop",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Alternative metal",
+    "count": 0
+  },
+  {
+    "year": 1992,
+    "genre": "Alternative rock",
+    "count": 0
+  }
+]

@@ -52,7 +52,7 @@ function fetchArtists(start = 0) {
                     }
 
                     // Fetch the next batch after a delay to avoid rate limiting
-                    setTimeout(() => fetchArtists(start + batchSize), 2000);
+                    setTimeout(() => fetchArtists(start + batchSize), 3000);
 
                 } else {
                     // Handle non-JSON response (e.g., error page or rate limit)
