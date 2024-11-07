@@ -22,6 +22,10 @@ def visualization2():
 def visualization3():
     return render_template('visualization3.html')
 
+# Route for the third visualization
+@app.route('/visualization4')
+def visualization4():
+    return render_template('visualization4.html')
 
 # @app.route('/data/<path:filename>')
 # def data(filename):
