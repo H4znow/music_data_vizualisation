@@ -23,9 +23,9 @@ def visualization3():
     return render_template('visualization3.html')
 
 
-# @app.route('/data/<path:filename>')
-# def data(filename):
-#     return send_from_directory('../data', filename)
+@app.route('/data/<path:filename>')
+def data(filename):
+    return send_from_directory('../data', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
