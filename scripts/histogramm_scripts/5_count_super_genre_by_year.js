@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const inputFilePath = './data/songs_superGenre_date.json';
+const saveFilePath = './data/superGenresByYear.json';
 
 // Read songs data
 let songs;
@@ -12,32 +13,36 @@ try {
     process.exit(1);
 }
 
-// Count super genres by year
+// Initialize an object to store super-genre counts by year
 const superGenresByYear = {};
+
+// Count super-genre occurrences by year
 for (const song of songs) {
-    let year = song.date;
+    const year = song.date;
+    const superGenre = song.super_genre || 'Unknown';
+
+    // Initialize year if it doesn't exist
     if (!superGenresByYear[year]) {
         superGenresByYear[year] = {};
     }
-    let superGenre = song.superGenre;
+
+    // Initialize the super genre count for this year if it doesn't exist
     if (!superGenresByYear[year][superGenre]) {
         superGenresByYear[year][superGenre] = 0;
     }
+
+    // Increment the count for the super genre in this year
     superGenresByYear[year][superGenre]++;
 }
 
-// Save super genres by year data in json file
-// Json format : {year, genre, count}
-const superGenresByYearArray = [];
-for (const year in superGenresByYear) {
-    for (const genre in superGenresByYear[year]) {
-        superGenresByYearArray.push({
-            year: year,
-            genre: genre,
-            count: superGenresByYear[year][genre]
-        });
-    }
-}
+// Convert superGenresByYear to the desired array format
+const superGenresByYearArray = Object.keys(superGenresByYear).map((year) => {
+    return {
+        year: year,
+        ...superGenresByYear[year]
+    };
+});
 
-const saveFilePath = './data/superGenresByYear.json';
-fs.writeFileSync(saveFilePath, JSON.stringify(superGenresByYearArray, null, 2));
+// Save the data to a JSON file in the specified format
+fs.writeFileSync(saveFilePath, JSON.stringify(superGenresByYearArray, null, 2), 'utf8');
+console.log(`Saved super genres by year to ${saveFilePath}`);
