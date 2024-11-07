@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "one" : "node scripts/fetchWasabi.js",
+    "two" : "node scripts/add_album_release_date.js",
+    "three" : "node scripts/add_location_gender.js"
   },
   "keywords": [],
   "author": "",

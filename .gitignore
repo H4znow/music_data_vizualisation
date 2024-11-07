@@ -6,3 +6,7 @@ venv/
 
 data/
 data/*
+!*/static/*.json
+
+*.json
+!*/static/*.json

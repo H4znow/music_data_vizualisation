@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualization 3: Time Evolution</title>
+    <title>Genre Production Evolution</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/double_slider.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/visualisation3.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/personnalised_checkbox.css') }}"> 
@@ -21,13 +21,14 @@
         <div id="my_dataviz"></div>
         <div class="filters">
             <div class="filter-title">
-                <span> Filtre sur le l'année </span>
+                <span> Selection de la période </span><br/>
+                <span> Veuillez selectionner la période à considérer Année de début - Année de fin</span>
             </div>
             <div class="year_control">
                 <div class="range_container">
                     <div class="sliders_control">
                         <input id="fromSlider" type="range" value="10" min="0" max="100"/>
-                        <input id="toSlider" type="range" value="40" min="0" max="100"/>
+                        <input id="toSlider" type="range" value="40" min="0" max="100" />
                     </div>
                     <div class="form_control">
                         <div class="form_control_container">
@@ -40,15 +41,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="form_control_checkbox">
-                    <label class="form-control-checkbox">
-                        <input type="checkbox" name="checkbox" value="UNK" />
-                        Inclure Unknown
-                      </label>
+                <div class="tooltip">
+                    <div class="form_control_checkbox">
+                        <label class="form-control-checkbox">
+                            <input type="checkbox" name="checkbox" value="UNK" />
+                            Inclure Unknown
+                          </label>
+                    </div>
+                    <span class="tooltiptext">Inclure la valeur Unknown (UNK) dans les dates</span>
                 </div>
+                
             </div>
             <div class="filter-title">
-                <span> Filtre sur le genre </span>
+                <span> Selection du(es) genre(s) </span><br/>
+                <span> Veuillez Selectionner les genres à considérer </span>
             </div>
             <div id="genre_control">
     
