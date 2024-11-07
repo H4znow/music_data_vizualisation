@@ -6,7 +6,7 @@ venv/
 
 data/
 data/*
-!falsk_app/static/*
+!*/static/*.json
 
 *.json
 !*/static/*.json
