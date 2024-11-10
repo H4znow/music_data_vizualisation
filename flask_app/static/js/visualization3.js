@@ -304,7 +304,7 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .attr("class", "barGroup")
         .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
         .selectAll("rect")
-        .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
+        .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key], year: d.year}; }); })
         .enter()
         .append("rect")
         .attr("x", function(d) { return xSubgroup(d.key); })
@@ -315,7 +315,7 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .attr("class", "bar")
         .attr("fill", function(d) { return color(d.key); })
         .on('mouseover', function(e, d) {
-            d3.select('#tooltip').transition().duration(200).style('opacity', 1).text(d.key + ": " + d.value)
+            d3.select('#tooltip').transition().duration(200).style('opacity', 1).text(d.key + ": " + d.value + " (" + d.year + ")")
         })
         .on('mouseout', function(e) {
             d3.select('#tooltip').style('opacity', 0)
@@ -362,7 +362,7 @@ d3.json("../data/songs_final_saved.json").then(data => {
             .attr("class", "barGroup")
             .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
             .selectAll("rect")
-            .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
+            .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key], year: d.year}; }); })
             .enter().append("rect")
             .attr("x", function(d) { return xSubgroup(d.key); })
             .attr("y", function(d) { return y(d.value); })
@@ -370,7 +370,16 @@ d3.json("../data/songs_final_saved.json").then(data => {
             .attr("height", function(d) { return height - y(d.value); })
             .attr("data-legend", function(d) { return d.key})
             .attr("class", "bar")
-            .attr("fill", function(d) { return color(d.key); });
+            .attr("fill", function(d) { return color(d.key); })
+            .on('mouseover', function(e, d) {
+                d3.select('#tooltip').transition().duration(200).style('opacity', 1).text(d.key + ": " + d.value + " (" + d.year + ")")
+            })
+            .on('mouseout', function(e) {
+                d3.select('#tooltip').style('opacity', 0)
+            })
+            .on('mousemove', function(e) {
+                d3.select('#tooltip').style('left', (e.pageX+10) + 'px').style('top', (e.pageY+10) + 'px')
+            })
 
 
         // Update the x-axis
@@ -414,8 +423,8 @@ d3.json("../data/songs_final_saved.json").then(data => {
         const fromInput = document.querySelector('#fromInput');
         const toInput = document.querySelector('#toInput');
         const addUnkCheckbox = document.querySelectorAll(".year_control .form_control_checkbox input:checked")
-        let start = fromSlider.value
-        let end = toSlider.value
+        let start = Number(fromSlider.value)
+        let end = Number(toSlider.value)
         for (let j=start; j<=end; j++){
             selectedYear.push(j)
         }
@@ -441,7 +450,7 @@ d3.json("../data/songs_final_saved.json").then(data => {
             .attr("class", "barGroup")
             .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
             .selectAll("rect")
-            .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
+            .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key], year: d.year}; }); })
             .enter().append("rect")
             .attr("x", function(d) { return xSubgroup(d.key); })
             .attr("y", function(d) { return y(d.value); })
@@ -449,7 +458,16 @@ d3.json("../data/songs_final_saved.json").then(data => {
             .attr("height", function(d) { return height - y(d.value); })
             .attr("data-legend", function(d) { return d.key})
             .attr("class", "bar")
-            .attr("fill", function(d) { return color(d.key); });
+            .attr("fill", function(d) { return color(d.key); })
+            .on('mouseover', function(e, d) {
+                d3.select('#tooltip').transition().duration(200).style('opacity', 1).text(d.key + ": " + d.value + " (" + d.year + ")")
+            })
+            .on('mouseout', function(e) {
+                d3.select('#tooltip').style('opacity', 0)
+            })
+            .on('mousemove', function(e) {
+                d3.select('#tooltip').style('left', (e.pageX+10) + 'px').style('top', (e.pageY+10) + 'px')
+            })
 
 
         // Update the x-axis
