@@ -248,6 +248,7 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .domain(selectedYear)
         .range([0, width])
         .padding([0.2])
+        
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .attr("class", "x-axis")
@@ -260,21 +261,21 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .style("font-size", "14px")
         .text("Période (Année)");
 
-        // Add Y axis
-        var y = d3.scaleLinear()
-            .domain([0, ymax])
-            .range([ height, 0 ]);
-        svg.append("g")
-            .attr("class", "y-axis")
-            .call(d3.axisLeft(y))
-            .append("text")
-            .attr("class", "axis-title")
-            .attr("transform", "rotate(-90)")
-            .attr("x", -height/2)
-            .attr("y", -40)
-            .attr("fill", "black")
-            .style("font-size", "14px")
-            .text("Fréquence");
+    // Add Y axis
+    var y = d3.scaleLinear()
+        .domain([0, ymax])
+        .range([ height, 0 ]);
+    svg.append("g")
+        .attr("class", "y-axis")
+        .call(d3.axisLeft(y))
+        .append("text")
+        .attr("class", "axis-title")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height/2)
+        .attr("y", -40)
+        .attr("fill", "black")
+        .style("font-size", "14px")
+        .text("Fréquence");
 
      // Another scale for subgroup position?
     var xSubgroup = d3.scaleBand()
@@ -304,14 +305,25 @@ d3.json("../data/songs_final_saved.json").then(data => {
         .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; })
         .selectAll("rect")
         .data(function(d) { return selectedGenres.map(function(key) {return {key: key, value: d[key]}; }); })
-        .enter().append("rect")
+        .enter()
+        .append("rect")
         .attr("x", function(d) { return xSubgroup(d.key); })
         .attr("y", function(d) { return y(d.value); })
         .attr("width", xSubgroup.bandwidth())
         .attr("height", function(d) { return height - y(d.value); })
         .attr("data-legend", function(d) { return d.key})
         .attr("class", "bar")
-        .attr("fill", function(d) { return color(d.key); });
+        .attr("fill", function(d) { return color(d.key); })
+        .on('mouseover', function(e, d) {
+            d3.select('#tooltip').transition().duration(200).style('opacity', 1).text(d.key + ": " + d.value)
+        })
+        .on('mouseout', function(e) {
+            d3.select('#tooltip').style('opacity', 0)
+        })
+        .on('mousemove', function(e) {
+            d3.select('#tooltip').style('left', (e.pageX+10) + 'px').style('top', (e.pageY+10) + 'px')
+        })
+        
 
     // Adding legend
     createOrUpdateLegend(selectedGenres)
