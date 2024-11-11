@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const https = require('https');
+const { exit } = require('node:process');
 
 const UNK_VALUE = "UNK";
 
@@ -68,6 +69,7 @@ async function addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath) {
         return;
     }
 
+    const stepToUpdate = 200
     // Add album release date and genre to each song
     for (let i = 0; i < data.length; i++) {
         let isGenrePresent = !data[i].hasOwnProperty('genre') || (data[i].hasOwnProperty('genre') && Array.isArray(data[i]["genre"]) && data[i]["genre"].length == 0)
@@ -76,7 +78,7 @@ async function addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath) {
 
             if (!albumIdToPublicationYear[id_album]) {
                 console.log(`Fetching album data for index ${i}`);
-                await sleep(2000); // Delay to avoid rate limiting
+                await sleep(1200); // Delay to avoid rate limiting
                 albumIdToPublicationYear[id_album] = await getAlbumReleaseDateAndGenre(id_album);
             }
 
@@ -85,17 +87,34 @@ async function addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath) {
             if (albumData.id_artist !== UNK_VALUE) data[i].id_artist = albumData.id_artist;
             if (albumData.albumGenre !== UNK_VALUE) data[i].albumGenre = albumData.albumGenre;
         }
-    }
+        if ((i > 0  && i % stepToUpdate == 0) || i == data.length-1){
+            fs.readFile(saveFilePath, 'utf8', (err, dataFile) => {
+                let existingSongs = [];
+                if (!err && dataFile) {
+                    try {
+                        existingSongs = JSON.parse(dataFile);
+                    } catch (error) {
+                        console.error('Erreur lors de l\'analyse des données existantes :', error);
+                        exit('1')
+                    }
+                }
+                // Combiner les chansons existantes avec les nouvelles
+                const allSongs = existingSongs.concat(data.slice(i-stepToUpdate, i+1));
 
-    // Write updated data to save file
-    try {
-        fs.writeFileSync(saveFilePath, JSON.stringify(data, null, 2));
-        console.log('Data written successfully to', saveFilePath);
-    } catch (error) {
-        console.error('Error writing to save file:', error);
+                // Écrire toutes les chansons dans le fichier
+                fs.writeFile(saveFilePath, JSON.stringify(allSongs, null, 2), 'utf8', (error) => {
+                    if (error) {
+                        console.error(`Erreur lors de l'écriture dans le fichier "${saveFilePath}" :`, error);
+                        exit('1')
+                    } else {
+                        console.log(`Sauvegardé ${stepToUpdate} chansons dans "${saveFilePath}"`);
+                    }
+                });
+            });
+        }
     }
 }
 
 const songSavedPath = './data/songs.json';
-const saveFilePath = './data/songs_dates.json';
+const saveFilePath = './data/songs_with_album_genre.json';
 addAlbumReleaseDateAndGenreToSong(songSavedPath, saveFilePath);
