@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Genre Popularity Map</title>
+  <link rel="stylesheet" href="/static/css/style1.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+</head>
+<body>
+
+  <h2>Popularity of musical genders around the world</h2>
+  <div class="controls">
+    <label for="yearInput">year : </label>
+    <input type="number" id="yearInput" placeholder="All Years" min="1900" max="2100">
+    
+    <label for="includeUnknownCheckbox">consider uknown gender</label>
+    <input type="checkbox" id="includeUnknownCheckbox">
+
+    <label for="includeUnknownDateCheckbox">consider uknown dates</label>
+    <input type="checkbox" id="includeUnknownDateCheckbox">
+
+  </div>
+  <div id="mapContainer"></div>
+  <button id="resetZoom">Unzoom</button>
+  <script>
+    var mapContainer = d3.select("#mapContainer");
+    var width = 960;
+    var height = 600;
+
+    var svg = mapContainer.append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var mapGroup = svg.append("g");
+
+    var projection = d3.geoMercator()
+        .center([0, 20])
+        .scale(140)
+        .translate([width / 2, height / 2]);
+
+    var path = d3.geoPath().projection(projection);
+
+    // Configuration du zoom
+    var zoom = d3.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", function(event) {
+          mapGroup.attr("transform", event.transform);
+        });
+
+    svg.call(zoom);
+
+    // Fonction de gestion du zoom
+    function zoomed(event) {
+        svg.selectAll("path").attr("transform", event.transform); // Applique le zoom aux chemins de la carte
+        svg.selectAll("circle").attr("transform", event.transform); // Applique le zoom aux bulles
+    }
+
+    // Fonction pour réinitialiser le zoom
+    function resetZoom() {
+        svg.transition()
+            .duration(750) // Animation de 750 ms pour la transition
+            .call(zoom.transform, d3.zoomIdentity); // Remet à l'état initial
+    }
+
+    // Charger les données géographiques
+    d3.json("/static/data/world.geojson").then(dataGeo => {
+      // Charger les données des albums depuis le fichier JSON
+      d3.json("/static/data/songs_final.json").then(albumData => {
+        ready(null, dataGeo, albumData);
+      }).catch(error => {
+        console.error("Erreur de chargement des données des albums : ", error);
+      });
+    }).catch(error => {
+      console.error("Erreur de chargement des données géographiques : ", error);
+    });
+
+    function ready(error, dataGeo, albumData) {
+      if (error) {
+        console.error("Erreur de chargement des données : ", error);
+        return;
+      }
+
+      // Extraire les genres uniques et créer une échelle de couleurs
+      var genres = Array.from(new Set(albumData.map(d => d.albumGenre)));
+      var color = d3.scaleOrdinal()
+        .domain(genres)
+        .range(d3.schemeSet3);
+
+      // Dessiner la carte du monde
+      mapGroup.append("g")
+        .selectAll("path")
+        .data(dataGeo.features)
+        .enter().append("path")
+          .attr("d", path)
+          .attr("fill", "#b8b8b8")
+          .style("pointer-events", "visibleFill") 
+          .style("stroke", "none")
+          .style("opacity", 0.3);
+
+      // Fonction pour regrouper les albums par pays et obtenir le genre le plus populaire
+      function getTopGenreByCountry(data) {
+        var countryGenreCounts = {};
+
+        data.forEach(album => {
+          const country = album.location.country;
+          const genre = album.albumGenre;
+
+          if (!countryGenreCounts[country]) {
+            countryGenreCounts[country] = {};
+          }
+          countryGenreCounts[country][genre] = (countryGenreCounts[country][genre] || 0) + 1;
+        });
+
+        // Pour chaque pays, sélectionner le genre ayant le plus grand nombre d'albums
+        var topGenreByCountry = {};
+        Object.keys(countryGenreCounts).forEach(country => {
+          const genres = countryGenreCounts[country];
+          const topGenre = Object.keys(genres).reduce((a, b) => genres[a] > genres[b] ? a : b);
+          topGenreByCountry[country] = { genre: topGenre, count: genres[topGenre] };
+        });
+
+        return topGenreByCountry;
+      }
+
+      // Fonction pour dessiner les bulles avec le genre le plus populaire et afficher le nombre d'albums au survol
+      function drawBubbles(data) {
+        mapGroup.selectAll("circle").remove();
+
+        // Obtenir le genre le plus populaire par pays avec le nombre d'albums
+        const topGenreByCountry = getTopGenreByCountry(data);
+
+        // Dessiner une seule bulle par pays, pour le genre le plus populaire
+        Object.entries(topGenreByCountry).forEach(([countryName, info]) => {
+          const country = dataGeo.features.find(c => c.properties.name === countryName);
+
+          if (country) {
+            mapGroup.append("circle")
+              .attr("cx", projection(d3.geoCentroid(country))[0])
+              .attr("cy", projection(d3.geoCentroid(country))[1])
+              .attr("r", Math.sqrt(info.count) * 2) // Taille de la bulle proportionnelle au nombre d'albums
+              .style("fill", color(info.genre))
+              .attr("stroke", "black")
+              .attr("stroke-width", 0.5)
+              .attr("fill-opacity", 0.7)
+              .append("title")
+              .text(`Pays : ${countryName}\nGenre : ${info.genre}\nAlbums : ${info.count}`);
+          }
+        });
+      }
+
+      // Fonction pour mettre à jour la carte en fonction de l'année sélectionnée
+      function updateMap() {
+        var selectedYear = d3.select("#yearInput").property("value");
+        var includeUnknownGenres = d3.select("#includeUnknownCheckbox").property("checked");
+        var includeUnknownDates = d3.select("#includeUnknownDateCheckbox").property("checked");
+    
+        // Filtrer les albums en fonction de l'année sélectionnée, de la présence d'un genre et d'une date de sortie valide,
+        // et de l'inclusion conditionnelle des genres et dates "UNK"
+        var filteredData = albumData.filter(album => {
+            // Vérifier que le genre est défini et non vide
+            var hasValidGenre = album.albumGenre && album.albumGenre.trim() !== "";
+    
+            // Vérifier que la date de sortie est définie et non vide
+            var hasValidReleaseDate = album.albumReleaseDate && album.albumReleaseDate.trim() !== "";
+    
+            // Filtrer par année si une année est sélectionnée
+            var yearMatch = selectedYear ? album.albumReleaseDate === selectedYear : true;
+    
+            // Genre match : Si le genre est valide ou si la case "inclus les genres inconnus" est cochée,
+            // on considère que les albums sans genre ont un genre "UNK"
+            var genreMatch = hasValidGenre || (!hasValidGenre && includeUnknownGenres);
+    
+            // Date match : Si la date de sortie est valide ou si la case "inclus les dates inconnues" est cochée,
+            // on considère que les albums sans date sont valides.
+            var dateMatch = hasValidReleaseDate || (!hasValidReleaseDate && includeUnknownDates);
+    
+            return yearMatch && genreMatch && dateMatch;
+        });
+    
+        drawBubbles(filteredData);
+    }
+
+
+
+      // Ajouter des écouteurs d'événements pour les entrées d'année et la case à cocher
+      d3.select("#yearInput").on("input", updateMap);
+      d3.select("#includeUnknownCheckbox").on("change", updateMap);
+      d3.select("#includeUnknownDateCheckbox").on("change", updateMap);
+      d3.select("#resetZoom").on("click", resetZoom);
+      // Initialisation de la carte avec toutes les données
+      updateMap();
+    }
+
+  </script>
+</body>
+</html>
