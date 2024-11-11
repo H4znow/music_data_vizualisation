@@ -65,7 +65,7 @@ var svg = d3.select("#my_dataviz")
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("../data/songs_final_saved.json").then(data => {
+d3.json("static/data/songs_with_album_genre.json").then(data => {
     let selectedGenres = ["Deathcore", "Heavy Metal"]
     let selectedYear = [2008, 2010, 2011, UNK_VALUE]
     
