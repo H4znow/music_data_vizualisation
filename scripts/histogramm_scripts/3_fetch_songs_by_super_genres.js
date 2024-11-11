@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 
-const input_super_genres = './data/super_genres.json';
+const input_super_genres = './data/songs_with_super_genres.json';
 const output_file = './data/songs_fetched_with_genre.json';
 
 // Fonction pour introduire un délai
