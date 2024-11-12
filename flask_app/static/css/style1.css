@@ -1,0 +1,97 @@
+/* Style pour les contrôles de sélection */
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+input[type="number"],
+input[type="checkbox"],
+select {
+    padding: 6px;
+    font-size: 1rem;
+    border: 2px solid #007bff; 
+    border-radius: 15px;
+    background-color: #f0f8ff;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007bff;
+}
+
+button {
+    padding: 8px 14px;
+    background-color: #007bff; 
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour le bouton de réinitialisation */
+#resetZoom {
+    margin-left: 20px;
+    padding: 8px 12px;
+    background-color: #FF5733; /* Couleur rouge-orange pour le bouton de réinitialisation */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#resetZoom:hover {
+    background-color: #D94E2D;
+}
+
+input[type="number"]{
+    width: 140px;
+}
+/* Bulles de genres musicaux */
+circle {
+    stroke: #333; /* Bordure sombre autour des bulles */
+    stroke-width: 0.5;
+    fill-opacity: 0.8;
+    transition: transform 0.1s ease; /* Transition au survol pour éviter le déplacement */
+}
+
+circle:hover {
+    fill-opacity: 1; /* Accentuation de la bulle au survol */
+    cursor: pointer;
+}
+/* Style des chemins de la carte */
+path {
+    fill: #A3C4C9; /* Couleur des pays en gris-bleu foncé */
+    stroke: #5F7582; /* Bordure grise pour les pays */
+    stroke-width: 0.5;
+    opacity: 0.8;
+}
+
+path:hover {
+    fill: #73A8B9; /* Couleur au survol */
+    opacity: 1;
+}
+
+/* Info-bulle */
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    font-size: 0.9rem;
+}
