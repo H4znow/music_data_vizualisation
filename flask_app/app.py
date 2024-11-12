@@ -18,7 +18,7 @@ def visualization2():
     return render_template('visualization2.html')
 
 # Route for the third visualization
-@app.route('/visualization3')
+@app.route('/visualization3', methods=['GET', 'POST'])
 def visualization3():
     return render_template('visualization3.html')
 

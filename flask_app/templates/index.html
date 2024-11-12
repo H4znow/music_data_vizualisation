@@ -4,17 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tequila Label - Music Distribution Visualizations</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
+    <header class="tequila-header">
+        <a href="/" class="home-link">
+            <svg class="header-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>Tequila Label</span>
+        </a>
+    </header>
+
     <div class="container">
         <h1>Welcome to Tequila Label's Music Distribution</h1>
         <p>Select a visualization:</p>
-        <ul>
-            <li><a href="{{ url_for('visualization1') }}">Visualization 1: World Distribution</a></li>
-            <li><a href="{{ url_for('visualization2') }}">Visualization 2: Genre Popularity</a></li>
-            <li><a href="{{ url_for('visualization3') }}">Visualization 3: Songs' genres Production eveolution </a></li>
-            <li><a href="{{ url_for('visualization4') }}">Visualization 4: Genre Structure</a></li>
+        <ul class="visualization-list">
+            <li>
+                <a href="{{ url_for('visualization1') }}">
+                    <svg class="list-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,15 90,85 10,85"/>
+                    </svg>
+                    Visualization 1: World Distribution
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('visualization2') }}">
+                    <svg class="list-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,15 90,85 10,85"/>
+                    </svg>
+                    Visualization 2: Genre Popularity
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('visualization4') }}">
+                    <svg class="list-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="50,15 90,85 10,85"/>
+                    </svg>
+                    Visualization 3: Genre Structure
+                </a>
+            </li>
         </ul>
     </div>
 </body>

@@ -22,10 +22,20 @@
             opacity: 0.3;
         }
     </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
 </head>
 <body>
+    <!-- Header with link to home -->
+    <header class="tequila-header">
+        <a href="/" class="home-link">
+            <svg class="header-shape" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>Tequila Label</span>
+        </a>
+    </header>
     <div id="controls">
-        <label for="genreFilter">Filter Genre: </label>
+        <label for="genreFilter">Filter Super-Genres: </label>
         <select id="genreFilter" multiple></select>
         <br><br>
         <label for="yearSlider">Select Year: </label>
@@ -35,6 +45,10 @@
         <label>
             <input type="checkbox" id="includeUnknown" onchange="toggleUnknownYear()"> Include "Unknown" Year
         </label>
+        <br><br>
+        <form action="/visualization3" method="post">
+            <button type="submit">Get more detailed informations</button>
+        </form>
     </div>
     <div id="histogram"></div>
     <script>
