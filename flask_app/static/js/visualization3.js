@@ -166,6 +166,8 @@ d3.json("static/data/songs_with_album_genre.json").then(data => {
                 year = albumReleaseDate
             }
         }
+        if (isNaN(year))
+            year = UNK_VALUE
         // We create a new key with the year if not present
         if (!yearToGenre.hasOwnProperty(year)){
             yearToGenre[year] = {}
@@ -252,11 +254,10 @@ d3.json("static/data/songs_with_album_genre.json").then(data => {
     });
 
     yearAndGenre = fillMissingResult(yearAndGenre, allGenres)
-    selectedYearAndGenre = filterGroupElt(yearAndGenre) 
-    selectedAlbumReleaseYearGenre = filterGroupElt(albumReleaseYearGenre)
-
+    selectedYearAndGenre = filterGroupElt(yearAndGenre)
+    //selectedAlbumReleaseYearGenre = filterGroupElt(albumReleaseYearGenre)
+    
     ymax = computeYMax(selectedYearAndGenre)
-
 
     var x = d3.scaleBand()
         .domain(selectedYear)
