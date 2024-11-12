@@ -29,8 +29,11 @@ function updateLimitSlider(min, max, slider_type){
     sliderInput.min = min 
 }
 
-function addGenreFilters(genres){
+function addGenreFilters(genres, count){
     let div = document.querySelector('#genre_control');
+    while (div.firstChild){
+        div.removeChild(div.lastChild)
+    }
     let children = []
     genres_arr = [...genres].sort();
     for (let i = 0; i < genres_arr.length; i++){
@@ -43,11 +46,22 @@ function addGenreFilters(genres){
         const container = document.createElement("div")
         container.setAttribute("class", "form_control_checkbox")
         label.appendChild(inp)
-        label.appendChild(document.createTextNode(genres_arr[i]))
+        label.appendChild(document.createTextNode(genres_arr[i] + `(${count[genres_arr[i]]})`))
         container.appendChild(label)
         children.push(container)
     }
     div.append(...children)
+}
+
+function countGenreInTimeFrame(data, genres){
+    count = {}
+    genres.forEach( genre => count[genre] = 0)
+    for (let i = 0; i < data.length; i++){
+        Object.keys(data[i]).forEach(genre => {
+            count[genre] += data[i][genre]
+        })
+    }
+    return count
 }
 
 const UNK_VALUE = "UNK"
@@ -339,14 +353,17 @@ d3.json("static/data/songs_with_album_genre.json").then(data => {
         updateLimitSlider(minYear, maxYear, "to")
     }
 
+    count = countGenreInTimeFrame(selectedYearAndGenre, allGenres)
     // Add Genre filters
-    addGenreFilters(allGenres)
+    addGenreFilters(allGenres, count)
 
     // A function that update the chart
     function updateSubGroup(subGroup) {
         selectedGenres = subGroup
         // Update the subgroups domain for the xSubgroup scale
-        xSubgroup.domain(subGroup);
+        xSubgroup.domain(subGroup)
+            .range([0, x.bandwidth()])
+            .padding([0.05])
 
         ymax = computeYMax(selectedYearAndGenre)
         y.domain([0, ymax])
@@ -395,6 +412,7 @@ d3.json("static/data/songs_with_album_genre.json").then(data => {
         .call(d3.axisLeft(y));
         
         createOrUpdateLegend(subGroup)
+        
     }
 
     // Initial subgroups to display based on checked checkboxes
@@ -483,6 +501,15 @@ d3.json("static/data/songs_with_album_genre.json").then(data => {
         .call(d3.axisLeft(y));
         
         createOrUpdateLegend(selectedGenres)
+
+        count = countGenreInTimeFrame(selectedYearAndGenre, allGenres)
+        // Update Number after the genre filters
+        addGenreFilters(allGenres, count)
+
+         // Add event listeners to each checkbox
+        document.querySelectorAll('#genre_control .form-control-checkbox input').forEach(checkbox => {
+            checkbox.addEventListener('change', handleCheckboxChange);
+        });
     }
 
     // Add event listeners to checkbox representing unknown value for groups
