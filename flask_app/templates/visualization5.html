@@ -70,7 +70,7 @@
 
             // Etape 4 : Filtres
             // Obtenez les années uniques présentes dans les données et triez-les
-            const years = Array.from(new Set(data.map(d => d.publicationDate.split("-")[0]))).sort();
+            const years = Array.from(new Set(jsonSongs.map(d => d.publicationDate.split("-")[0]))).sort();
             
             // Ajoutez les options au menu déroulant des années
             const yearSelect = d3.select("#yearSelect");
@@ -80,7 +80,7 @@
             });
 
             // Obtenez les villes uniques présentes dans les données et triez-les
-            const cities = Array.from(new Set(data.map(d => d.location.city))).sort();
+            const cities = Array.from(new Set(jsonSongs.map(d => d.location.city))).sort();
             
             // Ajoutez les options au menu déroulant des villes
             const citySelect = d3.select("#citySelect");
