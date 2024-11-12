@@ -19,7 +19,7 @@
             <span>Tequila Label</span>
         </a>
     </header>
-
+<div class="content">
   <h2>Popularity of musical genres around the world</h2>
   <div class="controls">
     <label for="yearInput">Year: </label>
@@ -32,8 +32,10 @@
     <input type="checkbox" id="includeUnknownDateCheckbox">
 
   </div>
-  <div id="mapContainer"></div>
   <button id="resetZoom">Unzoom</button>
+  <div id="mapContainer"></div>
+
+ </div>
   <script>
     var mapContainer = d3.select("#mapContainer");
     var width = 960;
