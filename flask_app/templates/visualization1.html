@@ -144,6 +144,8 @@
 
         Object.entries(topGenreByCountry).forEach(([countryName, info]) => {
           const country = dataGeo.features.find(c => c.properties.name === countryName);
+          const countryUrl = '/visualization5/'+countryName;
+          const testUrl = '/visualization5';
 
           if (country) {
               var radius = Math.sqrt(info.count) * 2;
@@ -156,6 +158,10 @@
                 .attr("stroke", "black")
                 .attr("stroke-width", 0.5)
                 .attr("fill-opacity", 0.7)
+                .style("cursor", "pointer") // Change le curseur pour indiquer que c'est cliquable
+                .on("click", function() {
+                  window.location.href = countryUrl; // Rediriger vers l'URL correspondante
+                })
                 .append("title")
                 .text(`Country: ${countryName}\nGenre: ${info.genre}\nAlbums: ${info.count}`);
           }

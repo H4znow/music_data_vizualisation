@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+
+    <!-- Function for radial charts -->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+</head>
+<body>
+    <!-- Header with link to home -->
+    <header class="tequila-header">
+        <a href="/" class="home-link">
+            <svg class="header-shape" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>Tequila Label</span>
+        </a>
+    </header>
+    <h1>Visualisation</h1>
+    <div id="yearFilter">
+      <label for="yearSelect">Sélectionnez une année :</label>
+      <select id="yearSelect">
+          <!-- Les options seront ajoutées dynamiquement en JavaScript -->
+      </select>
+    </div>
+    <div id="cityFilter">
+      <label for="citySelect">Sélectionnez une ville :</label>
+      <select id="citySelect">
+          <!-- Les options seront ajoutées dynamiquement en JavaScript -->
+      </select>
+    </div>
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+    <script>
+        const country = "{{ country }}";
+        console.log(country);
+        // set the dimensions and margins of the graph
+        var margin = {top: 100, right: 0, bottom: 0, left: 0},
+            width = 460 - margin.left - margin.right,
+            height = 460 - margin.top - margin.bottom,
+            innerRadius = 90,
+            outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+        
+        
+        var svg = d3.select("#my_dataviz")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform", "translate(" + (width / 2 + margin.left) + "," + (height / 2 + margin.top) + ")");
+
+        let jsonSongs = {};
+        let dataSongs = {};
+        let cityCounts = {};
+        let ceil = 0;
+        let cityData;
+        var x;
+        var y;
+        // Load local JSON file
+        d3.json("../static/data/songs_final.json")
+        .then(data => {
+            jsonSongs = data.filter(d => d.location.country === country);
+            console.dir(jsonSongs);
+            createChart(jsonSongs);
+
+            // Etape 4 : Filtres
+            // Obtenez les années uniques présentes dans les données et triez-les
+            const years = Array.from(new Set(data.map(d => d.publicationDate.split("-")[0]))).sort();
+            
+            // Ajoutez les options au menu déroulant des années
+            const yearSelect = d3.select("#yearSelect");
+            yearSelect.append("option").attr("value", "all").text("Toutes les années"); // Option pour afficher toutes les années
+            years.forEach(year => {
+                yearSelect.append("option").attr("value", year).text(year);
+            });
+
+            // Obtenez les villes uniques présentes dans les données et triez-les
+            const cities = Array.from(new Set(data.map(d => d.location.city))).sort();
+            
+            // Ajoutez les options au menu déroulant des villes
+            const citySelect = d3.select("#citySelect");
+            citySelect.append("option").attr("value", "all").text("Toutes les villes"); // Option pour afficher toutes les villes
+            cities.forEach(city => {
+                citySelect.append("option").attr("value", city).text(city);
+            });
+        })
+        .catch(error => {
+            console.error("Error loading album data: ", error);
+        });
+
+
+        function createChart(data){
+          // Étape 1 : Compter le nombre de chansons par ville
+          let songYears = {};
+          let ceil = 0;
+          console.log("IJBFCEONBO");
+          console.dir(data);
+          data.forEach(function(song) {
+              let city = song.genre;
+              if (cityCounts[city]) {
+                  cityCounts[city] += 1;
+                  if(cityCounts[city] > ceil)
+                      ceil = cityCounts[city];
+              } else {
+                  cityCounts[city] = 1;
+              }
+          });
+
+          // Étape 2 : Convertir les données pour D3.js
+          cityData = Object.keys(cityCounts).map(function(city) {
+              return { city: city, count: cityCounts[city] };
+          });
+
+          //Trier les données par ordre décroissant
+          cityData.sort(function(a, b) {
+              return b.count - a.count; // Tri décroissant
+          });
+
+          // Scales
+          x = d3.scaleBand()
+              .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle
+              .align(0)
+              .domain(cityData.map(function(d) { return d.city; }));
+
+          y = d3.scaleRadial()
+              .range([innerRadius, outerRadius])
+              .domain([0, d3.max(cityData, function(d) { return d.count; })]); // Scale domain based on max count
+          createBars(cityData, x, y);
+          createLabels(cityData, x, y);
+          createLevels(ceil);
+        }
+
+        function createBars(data, x, y){
+          // Add the bars
+          svg.append("g")
+            .selectAll("path")
+            .data(data)
+            .enter()
+            .append("path")
+                .attr("class", "bar")
+                .attr("fill", "#69b3a2")
+                .attr("d", d3.arc()
+                    .innerRadius(innerRadius)
+                    .outerRadius(function(d) { return y(d.count); })  // Use the count to define the bar height
+                    .startAngle(function(d) { return x(d.city); })
+                    .endAngle(function(d) { return x(d.city) + x.bandwidth(); })
+                    .padAngle(0.01)
+                    .padRadius(innerRadius))
+                .attr("data-count", function(d) { return d.count; })
+                // Événement au survol pour afficher le tooltip
+                .on("mouseover", function(event, d) {
+                    // Récupérer la position du curseur avec clientX et clientY
+                    const xPos = event.clientX;
+                    const yPos = event.clientY;
+
+                    console.log("DONZDFAONF");
+
+                    // Créer ou mettre à jour le tooltip
+                    d3.select(".tooltip")
+                        .style("left", (xPos + 10) + "px")
+                        .style("top", (yPos - 30) + "px")
+                        .style("opacity", 1)  // Rendre visible le tooltip
+                        .html("Nombre de chansons : " + d.count);
+                })
+                // Événement pour cacher le tooltip
+                .on("mouseout", function() {
+                    d3.select(".tooltip").style("opacity", 0);  // Masquer le tooltip
+                });
+        }
+
+        function createLabels(data, x, y){
+          svg.selectAll(".label").remove();
+            // Add the labels
+            svg.append("g")
+                .selectAll("g")
+                .data(data)
+                .enter()
+                .append("g")
+                .attr("class", "label")
+                .attr("text-anchor", function(d) { return (x(d.city) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "end" : "start"; })
+                .attr("transform", function(d) { return "rotate(" + ((x(d.city) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")" + "translate(" + (y(d.count) + 10) + ",0)"; })
+                .append("text")
+                .text(function(d) { return d.city; })
+                .attr("transform", function(d) { return (x(d.city) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
+                .style("font-size", "11px")
+                .attr("alignment-baseline", "middle");
+        }
+
+        function createLevels(ceil){
+          svg.selectAll(".level-group").remove();
+          // Étape 3 : Ajouter des cercles pour montrer les paliers
+          const levels = [0, Math.round(ceil*0.25), Math.round(ceil*0.5), Math.round(ceil*0.75), ceil]; // Remplacez par vos paliers souhaités
+
+          // Ajouter les cercles et les labels
+          const levelGroup = svg.append("g")
+              .selectAll("g")
+              .data(levels)
+              .enter()
+              .append("g")
+              .attr("class", "level-group"); // Classe pour le groupe de niveaux
+
+          // Ajouter les cercles
+          levelGroup.append("circle")
+              .attr("r", function(d) { console.log("Radius value:", d); return y(d);}) // Utilisez la fonction de scale radial pour définir le rayon
+              .attr("fill", "none") // Pas de remplissage pour les cercles
+              .attr("stroke", "#ccc") // Couleur de contour
+              .attr("stroke-width", 1); // Épaisseur du contour
+
+          // Ajouter les labels
+          levelGroup.append("text")
+              .attr("text-anchor", "middle") // Centrer le texte
+              .attr("dy", ".35em") // Ajuster la position verticale
+              .attr("fill", "#000") // Couleur du texte
+              .text(function(d) { return d; }) // Afficher la valeur du niveau
+              .attr("transform", function(d) { return "translate(0," + (-y(d)) + ")"; }); // Positionner le texte au-dessus du cercle
+        }
+       
+        // Fonction pour filtrer les données en fonction de l’année sélectionnée
+        function filterData() {
+            svg.selectAll(".bar").remove();
+            const selectedYear = document.getElementById("yearSelect").value;
+            const selectedCity = document.getElementById("citySelect").value;
+            var filteredData = [];
+            filteredData = [];
+            jsonSongs.forEach(function (song){
+              console.log(selectedCity);
+              if(selectedYear && song.publicationDate.split("-")[0] == parseInt(selectedYear)){
+                filteredData.push(song);
+                console.log("A");
+                console.dir(filteredData);
+              }
+              if(selectedCity != "all" && song.city == selectedCity){
+                filteredData.push(song);
+              }
+            });
+            
+            console.dir(filteredData);
+            createChart(filteredData);
+        }
+
+        // Ajouter un écouteur d'événement au menu déroulant pour filtrer les données
+        d3.select("#yearSelect").on("change", filterData);
+        d3.select("#citySelect").on("change", filterData);
+        </script>
+    
+    <!-- HTML -->
+    <div id="chartdiv"></div>
+</body>
+</html>
