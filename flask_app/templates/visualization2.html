@@ -6,6 +6,10 @@
     <title>Animated 2D Histogram</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
+        div {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
         .bar {
             fill: steelblue;
             opacity: 0.7;
@@ -20,6 +24,23 @@
             font-size: 50px;
             fill: #848484;
             opacity: 0.3;
+        }
+        .gold-bar {
+            fill: gold;
+        }
+        .silver-bar {
+            fill: silver;
+        }
+        .bronze-bar {
+            fill: #cd7f32;
+        }
+        .legend {
+            font-size: 14px;
+        }
+        .legend rect {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
         }
     </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
@@ -52,7 +73,7 @@
     </div>
     <div id="histogram"></div>
     <script>
-        const margin = { top: 40, right: 20, bottom: 80, left: 60 };
+        const margin = { top: 40, right: 150, bottom: 80, left: 60 };
         const width = 1000 - margin.left - margin.right;
         const height = 500 - margin.top - margin.bottom;
         let yearIndex = 0;
@@ -102,6 +123,7 @@
             const yearSlider = document.getElementById("yearSlider");
             yearSlider.max = filteredYearData.length - 1;
 
+            createLegend();
             startAnimation();
         }
 
@@ -136,15 +158,23 @@
             svg.selectAll(".bar").remove();
             svg.selectAll(".year-label").remove();
 
+            const sortedGenres = selectedGenres.map(genre => ({ genre, count: yearItem[genre] || 0 }))
+                .sort((a, b) => b.count - a.count);
+
             svg.selectAll(".bar")
-                .data(selectedGenres)
+                .data(sortedGenres)
                 .enter()
                 .append("rect")
-                .attr("class", "bar")
-                .attr("x", d => x(d))
+                .attr("class", d => {
+                    if (d.genre === sortedGenres[0].genre) return "bar gold-bar";
+                    if (d.genre === sortedGenres[1].genre) return "bar silver-bar";
+                    if (d.genre === sortedGenres[2].genre) return "bar bronze-bar";
+                    return "bar";
+                })
+                .attr("x", d => x(d.genre))
                 .attr("width", x.bandwidth())
-                .attr("y", d => y(yearItem[d] || 0))
-                .attr("height", d => height - y(yearItem[d] || 0));
+                .attr("y", d => y(d.count))
+                .attr("height", d => height - y(d.count));
 
             svg.append("text")
                 .attr("class", "year-label")
@@ -154,6 +184,40 @@
                 .text(year);
 
             document.getElementById("yearDisplay").textContent = year;
+        }
+
+        function createLegend() {
+            const legendData = [
+                { color: 'gold', label: 'Top Genre' },
+                { color: 'silver', label: 'Second Genre' },
+                { color: '#cd7f32', label: 'Third Genre' },
+                { color: 'steelblue', label: 'Other Genres' }
+            ];
+
+            const legend = svg.append("g")
+                .attr("class", "legend-container")
+                .attr("transform", `translate(${width + 20}, 0)`);
+
+            legend.selectAll("g")
+                .data(legendData)
+                .enter()
+                .append("g")
+                .attr("transform", (d, i) => `translate(0, ${i * 25})`)
+                .each(function(d) {
+                    const g = d3.select(this);
+                    g.append("rect")
+                        .attr("x", 0)
+                        .attr("y", 0)
+                        .attr("width", 18)
+                        .attr("height", 18)
+                        .style("fill", d.color);
+
+                    g.append("text")
+                        .attr("x", 24)
+                        .attr("y", 14)
+                        .attr("class", "legend")
+                        .text(d.label);
+                });
         }
 
         function startAnimation() {
