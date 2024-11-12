@@ -28,6 +28,7 @@ try {
                 // Ajouter le champ 'super_genre' à chaque chanson
                 const updatedSongs = songs.map(song => {
                     song.super_genre = superGenre;
+                    song.genre = genre;
                     return song;
                 });
 
