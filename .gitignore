@@ -1,12 +1,6 @@
 node_modules/
 data/*
+!flask_app/static/data/
 
 venv/*
 venv/
-
-data/
-data/*
-!*/static/*.json
-
-*.json
-!*/static/*.json
