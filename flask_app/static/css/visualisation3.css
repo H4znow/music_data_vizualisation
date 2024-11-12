@@ -87,4 +87,14 @@ body{
     visibility: visible;
   }
 
+  #visu{
+    align-self: center;
+    margin-top: 20px;
+    margin-left: 40%;
+    padding: 5px;
+  }
+
+  #visu button{
+    padding: 5px;
+  }
 
