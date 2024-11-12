@@ -1,9 +1,27 @@
+/* Centrer la carte et ajuster sa largeur */
+#mapContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Prendre toute la largeur de l'écran */
+    margin: 0 auto; /* Centrer horizontalement */
+    padding: 20px 0;
+    margin-left: 8vw;
+    box-sizing: border-box;
+}
+
+#mapContainer svg {
+    width: 100%;
+    height: calc(100% - 200px);
+    max-width: 1200px; /* Largeur maximale pour éviter une trop grande étendue */
+}
+
 /* Style pour les contrôles de sélection */
 .controls {
     display: flex;
     gap: 15px;
     align-items: center;
     margin: 20px 0;
+    justify-content: center; /* Centrer les contrôles */
 }
 
 label {
@@ -55,9 +73,10 @@ button:hover {
     background-color: #D94E2D;
 }
 
-input[type="number"]{
+input[type="number"] {
     width: 140px;
 }
+
 /* Bulles de genres musicaux */
 circle {
     stroke: #333; /* Bordure sombre autour des bulles */
@@ -70,6 +89,7 @@ circle:hover {
     fill-opacity: 1; /* Accentuation de la bulle au survol */
     cursor: pointer;
 }
+
 /* Style des chemins de la carte */
 path {
     fill: #A3C4C9; /* Couleur des pays en gris-bleu foncé */
@@ -94,4 +114,10 @@ path:hover {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
     pointer-events: none;
     font-size: 0.9rem;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

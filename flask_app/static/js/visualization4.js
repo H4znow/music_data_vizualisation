@@ -178,6 +178,7 @@ function showDetailPanel(d) {
         .transition()
         .duration(300)
         .style("opacity", 1);
+    
 }
 
 function getNodeDetails(d) {
@@ -248,7 +249,8 @@ function getNodeDetails(d) {
         g.selectAll("*").remove();
     
         const hierarchy = d3.hierarchy(root)
-            .sum(d => d.size)
+            // .sum(d => d.size)
+            .sum(d => Math.max(0, d.size)) // Ensure only positive values are summed
             .sort((a, b) => b.value - a.value);
     
         const nodes = pack(hierarchy).descendants();
@@ -256,7 +258,8 @@ function getNodeDetails(d) {
         view = g.append("g");
     
         const node = view.selectAll(".node")
-            .data(nodes)
+            // .data(nodes)
+            .data(nodes.filter(d => d.r >= 0)) // Filter out nodes with negative radii
             .enter()
             .append("g")
             .attr("class", d => d.children ? "node" : "leaf node")
@@ -264,7 +267,12 @@ function getNodeDetails(d) {
     
         // Add circles with enhanced interactions
         node.append("circle")
-            .attr("r", d => d.r)
+            //.attr("r", d => d.r)
+            .attr("r", d => {
+                const radius = Math.max(0, d.r); // Ensure radius is non-negative
+                console.log("Node radius:", radius); // Log adjusted radius values
+                return radius;
+            })
             .style("fill", d => getNodeColor(d))
             .style("fill-opacity", d => d.children ? 0.6 : 0.8)
             .style("stroke", d => d.depth === 1 ? getNodeColor(d) : "#fff")
@@ -353,8 +361,89 @@ async function loadJsonData(path) {
 
 
 // Initialize when page loads
+// window.onload = function() {
+//     initVisualization();
+//     const jsonFilePath = 'static/data/genre_supergenre_structure.json';
+//     loadJsonData(jsonFilePath);
+// }
 window.onload = function() {
+    console.log("Page loaded, starting initialization...");
+
+    // Ensure initVisualization is running
     initVisualization();
-    const jsonFilePath = './data/genre_supergenre_structure.json';
+    console.log("Visualization initialized.");
+
+    // Confirm the path to the JSON file
+    const jsonFilePath = 'static/data/genre_supergenre_structure.json';
+    console.log(`Loading JSON data from: ${jsonFilePath}`);
+
+    // Load the JSON file
     loadJsonData(jsonFilePath);
-}
+};
+
+// Set up SVG dimensions and padding
+// Set up SVG dimensions and padding
+// Set up SVG dimensions and padding
+// const width = 960;
+// const height = 960;
+// const svg = d3.select("svg")
+
+// console.log("Starting visualization script.");  // Debugging entry point
+
+// // Load the JSON data
+// d3.json("static/data/genre_supergenre_structure.json").then(data => {
+//     console.log("Data loaded:", data); // Check if data is loaded
+
+//     if (!data || !data.children) {
+//         console.error("Data format is not as expected.");
+//         return;
+//     }
+
+//     // Create a hierarchy from the data
+//     const root = d3.hierarchy(data)
+//         .sum(d => d.size || 0)
+//         .sort((a, b) => b.value - a.value);
+
+//     console.log("Hierarchy created:", root); // Check the hierarchy structure
+
+//     // Create the circle packing layout
+//     const pack = d3.pack()
+//         .size([width, height])
+//         .padding(3);
+
+//     // Apply the layout to the hierarchy data
+//     const nodes = pack(root).descendants();
+//     console.log("Packed nodes:", nodes); // Check nodes after packing
+
+//     // Select the SVG and bind the data
+//     const svg = d3.select("svg")
+//         .attr("viewBox", `0 0 ${width} ${height}`)
+//         .style("font-family", "sans-serif");
+
+//     // Draw circles for each node
+//     svg.selectAll("circle")
+//         .data(nodes)
+//         .enter().append("circle")
+//         .attr("cx", d => d.x)
+//         .attr("cy", d => d.y)
+//         .attr("r", d => d.r)
+//         .attr("fill", d => d.children ? "steelblue" : "lightcoral")
+//         .attr("stroke", "#333")
+//         .attr("stroke-width", 1)
+//         .attr("opacity", 0.8)
+//         .on("mouseover", function(event, d) {
+//             d3.select(this).attr("stroke-width", 2); // Highlight on hover
+//             console.log("Hovered over:", d.data.name); // Check if hover events trigger
+//         })
+//         .on("mousemove", function(event) {
+//             console.log("Mouse moving over circle."); // Track mouse move
+//         })
+//         .on("mouseout", function() {
+//             d3.select(this).attr("stroke-width", 1); // Remove highlight
+//             console.log("Mouse out of circle."); // Track mouse out
+//         });
+
+//     console.log("Visualization should now be displayed."); // Final check
+// }).catch(error => {
+//     console.error("Error loading or processing data:", error); // Check if there's an error loading the file
+// });

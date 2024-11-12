@@ -27,6 +27,11 @@ def visualization3():
 def visualization4():
     return render_template('visualization4.html')
 
+# Route for the third visualization
+@app.route('/visualization5/<country>')
+def visualization5(country):
+    return render_template('visualization5.html', country=country)
+
 @app.route('/data/<path:filename>')
 def data(filename):
     return send_from_directory('../data', filename)
