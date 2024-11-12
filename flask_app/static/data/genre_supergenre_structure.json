@@ -1,0 +1,1313 @@
+{
+  "name": "Music",
+  "children": [
+    {
+      "name": "Pop",
+      "children": [
+        {
+          "name": "Pop music",
+          "size": 625
+        },
+        {
+          "name": "Synthpop",
+          "size": 94
+        },
+        {
+          "name": "Electropop",
+          "size": 12
+        },
+        {
+          "name": "Europop",
+          "size": 74
+        },
+        {
+          "name": "Dance-pop",
+          "size": 80
+        },
+        {
+          "name": "Pop rock",
+          "size": 224
+        },
+        {
+          "name": "Schlager music",
+          "size": 1
+        },
+        {
+          "name": "Baroque pop",
+          "size": 133
+        },
+        {
+          "name": "Adult contemporary music",
+          "size": 16
+        },
+        {
+          "name": "Sophisti-pop",
+          "size": 2
+        },
+        {
+          "name": "Traditional pop music",
+          "size": 48
+        },
+        {
+          "name": "Easy listening",
+          "size": 114
+        },
+        {
+          "name": "Popmusik",
+          "size": 4
+        },
+        {
+          "name": "Power pop",
+          "size": 33
+        },
+        {
+          "name": "J-pop",
+          "size": 4
+        },
+        {
+          "name": "Popular music",
+          "size": 42
+        },
+        {
+          "name": "Progressive pop",
+          "size": 5
+        },
+        {
+          "name": "Austropop",
+          "size": 1
+        },
+        {
+          "name": "Psychedelic pop",
+          "size": 25
+        },
+        {
+          "name": "Pop",
+          "size": 1
+        },
+        {
+          "name": "Post-Britpop",
+          "size": 2
+        },
+        {
+          "name": "K-pop",
+          "size": 1
+        },
+        {
+          "name": "Jangle pop",
+          "size": 4
+        },
+        {
+          "name": "Teen pop",
+          "size": 4
+        },
+        {
+          "name": "Operatic pop",
+          "size": 14
+        },
+        {
+          "name": "Bubblegum dance",
+          "size": 5
+        },
+        {
+          "name": "Dream pop",
+          "size": 8
+        },
+        {
+          "name": "Bubblegum pop",
+          "size": 5
+        },
+        {
+          "name": "Pop-folk",
+          "size": 1
+        },
+        {
+          "name": "Noise pop",
+          "size": 3
+        },
+        {
+          "name": "Swamp pop",
+          "size": 4
+        },
+        {
+          "name": "Pop (musique)",
+          "size": 1
+        },
+        {
+          "name": "20th-century popular music",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Rock",
+      "children": [
+        {
+          "name": "New wave music",
+          "size": 74
+        },
+        {
+          "name": "Dark wave",
+          "size": 1
+        },
+        {
+          "name": "Alternative rock",
+          "size": 217
+        },
+        {
+          "name": "Surf music",
+          "size": 2
+        },
+        {
+          "name": "Post-grunge",
+          "size": 22
+        },
+        {
+          "name": "Rock and roll",
+          "size": 50
+        },
+        {
+          "name": "Soft rock",
+          "size": 220
+        },
+        {
+          "name": "Garage rock",
+          "size": 13
+        },
+        {
+          "name": "Hard rock",
+          "size": 390
+        },
+        {
+          "name": "Glam rock",
+          "size": 18
+        },
+        {
+          "name": "Instrumental rock",
+          "size": 2
+        },
+        {
+          "name": "Rock music",
+          "size": 163
+        },
+        {
+          "name": "Psychedelic rock",
+          "size": 37
+        },
+        {
+          "name": "Progressive rock",
+          "size": 43
+        },
+        {
+          "name": "Funk rock",
+          "size": 13
+        },
+        {
+          "name": "Industrial rock",
+          "size": 2
+        },
+        {
+          "name": "Grunge",
+          "size": 24
+        },
+        {
+          "name": "Experimental rock",
+          "size": 6
+        },
+        {
+          "name": "Electronic rock",
+          "size": 10
+        },
+        {
+          "name": "Art rock",
+          "size": 7
+        },
+        {
+          "name": "Post-punk revival",
+          "size": 12
+        },
+        {
+          "name": "Beat music",
+          "size": 17
+        },
+        {
+          "name": "British Invasion",
+          "size": 3
+        },
+        {
+          "name": "Progressive folk",
+          "size": 2
+        },
+        {
+          "name": "Psychedelic folk",
+          "size": 6
+        },
+        {
+          "name": "Folk rock",
+          "size": 112
+        },
+        {
+          "name": "Symphonic rock",
+          "size": 5
+        },
+        {
+          "name": "Arena rock",
+          "size": 1
+        },
+        {
+          "name": "Cello rock",
+          "size": 3
+        },
+        {
+          "name": "Gothic rock",
+          "size": 4
+        },
+        {
+          "name": "Stoner rock",
+          "size": 2
+        },
+        {
+          "name": "Palm Desert Scene",
+          "size": 1
+        },
+        {
+          "name": "Southern rock",
+          "size": 2
+        },
+        {
+          "name": "Space rock",
+          "size": 1
+        },
+        {
+          "name": "Britpop",
+          "size": 19
+        },
+        {
+          "name": "Dance-rock",
+          "size": 10
+        },
+        {
+          "name": "Heartland rock",
+          "size": 1
+        },
+        {
+          "name": "No wave",
+          "size": 1
+        },
+        {
+          "name": "Acid rock",
+          "size": 1
+        },
+        {
+          "name": "Rap rock",
+          "size": 14
+        },
+        {
+          "name": "Mod revival",
+          "size": 2
+        },
+        {
+          "name": "Rockmusik",
+          "size": 2
+        },
+        {
+          "name": "Roots rock",
+          "size": 3
+        },
+        {
+          "name": "Australian rock",
+          "size": 1
+        },
+        {
+          "name": "Rock alternatif",
+          "size": 1
+        },
+        {
+          "name": "Acid rock",
+          "size": 1
+        },
+        {
+          "name": "Rap rock",
+          "size": 14
+        },
+        {
+          "name": "Mod revival",
+          "size": 2
+        },
+        {
+          "name": "Roots rock",
+          "size": 3
+        },
+        {
+          "name": "Rockabilly",
+          "size": 8
+        }
+      ]
+    },
+    {
+      "name": "Hip Hop/Rap",
+      "children": [
+        {
+          "name": "Alternative hip hop",
+          "size": 36
+        },
+        {
+          "name": "Hip hop music",
+          "size": 90
+        },
+        {
+          "name": "Gangsta rap",
+          "size": 2
+        },
+        {
+          "name": "Pop-rap",
+          "size": 11
+        },
+        {
+          "name": "Latin hip hop",
+          "size": 1
+        },
+        {
+          "name": "Political hip hop",
+          "size": 3
+        },
+        {
+          "name": "Hip hop",
+          "size": 1
+        },
+        {
+          "name": "Southern hip hop",
+          "size": 2
+        },
+        {
+          "name": "Hardcore hip hop",
+          "size": 1
+        },
+        {
+          "name": "West Coast hip hop",
+          "size": 2
+        },
+        {
+          "name": "Rap metal",
+          "size": 1
+        },
+        {
+          "name": "Rapcore",
+          "size": 7
+        },
+        {
+          "name": "Crunk",
+          "size": 1
+        },
+        {
+          "name": "Trap music",
+          "size": 2
+        },
+        {
+          "name": "Alternative hip hop",
+          "size": 36
+        },
+        {
+          "name": "Pop-rap",
+          "size": 11
+        },
+        {
+          "name": "Rapcore",
+          "size": 7
+        }
+      ]
+    },
+    {
+      "name": "Electronic",
+      "children": [
+        {
+          "name": "Tech house",
+          "size": 1
+        },
+        {
+          "name": "Electronica",
+          "size": 8
+        },
+        {
+          "name": "Electro (music)",
+          "size": 5
+        },
+        {
+          "name": "House music",
+          "size": 16
+        },
+        {
+          "name": "Acid house",
+          "size": 1
+        },
+        {
+          "name": "Electro house",
+          "size": 9
+        },
+        {
+          "name": "Progressive house",
+          "size": 26
+        },
+        {
+          "name": "Electroclash",
+          "size": 1
+        },
+        {
+          "name": "Electronic music",
+          "size": 14
+        },
+        {
+          "name": "Breakbeat hardcore",
+          "size": 1
+        },
+        {
+          "name": "Drum and bass",
+          "size": 2
+        },
+        {
+          "name": "Dubstep",
+          "size": 3
+        },
+        {
+          "name": "Future garage",
+          "size": 1
+        },
+        {
+          "name": "Electronic dance music",
+          "size": 16
+        },
+        {
+          "name": "Ambient music",
+          "size": 1
+        },
+        {
+          "name": "Moombahton",
+          "size": 1
+        },
+        {
+          "name": "Ambient house",
+          "size": 1
+        },
+        {
+          "name": "Big beat",
+          "size": 2
+        },
+        {
+          "name": "Happy hardcore",
+          "size": 1
+        },
+        {
+          "name": "Trip hop",
+          "size": 2
+        },
+        {
+          "name": "Uplifting trance",
+          "size": 1
+        },
+        {
+          "name": "Trance music",
+          "size": 7
+        },
+        {
+          "name": "Vocal trance",
+          "size": 2
+        },
+        {
+          "name": "Dream trance",
+          "size": 2
+        },
+        {
+          "name": "Bass music",
+          "size": 1
+        },
+        {
+          "name": "Techno",
+          "size": 3
+        },
+        {
+          "name": "Deep house",
+          "size": 1
+        },
+        {
+          "name": "Electronic body music",
+          "size": 1
+        },
+        {
+          "name": "Gabber",
+          "size": 1
+        },
+        {
+          "name": "Downtempo",
+          "size": 1
+        },
+        {
+          "name": "Electronic rock",
+          "size": 10
+        },
+        {
+          "name": "New-age music",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Jazz",
+      "children": [
+        {
+          "name": "Jazz",
+          "size": 47
+        },
+        {
+          "name": "Jazz fusion",
+          "size": 5
+        },
+        {
+          "name": "West Coast jazz",
+          "size": 4
+        },
+        {
+          "name": "Swing music",
+          "size": 4
+        },
+        {
+          "name": "Bebop",
+          "size": 1
+        },
+        {
+          "name": "Smooth jazz",
+          "size": 12
+        },
+        {
+          "name": "Jazz standard",
+          "size": 1
+        },
+        {
+          "name": "Vocal jazz",
+          "size": 1
+        },
+        {
+          "name": "Jive (dance)",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Blues",
+      "children": [
+        {
+          "name": "Twelve-bar blues",
+          "size": 1
+        },
+        {
+          "name": "Blues rock",
+          "size": 95
+        },
+        {
+          "name": "Blues",
+          "size": 171
+        },
+        {
+          "name": "Hill country blues",
+          "size": 1
+        },
+        {
+          "name": "Classic female blues",
+          "size": 1
+        },
+        {
+          "name": "Soul blues",
+          "size": 1
+        },
+        {
+          "name": "Jump blues",
+          "size": 11
+        },
+        {
+          "name": "Electric blues",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Country",
+      "children": [
+        {
+          "name": "Country music",
+          "size": 329
+        },
+        {
+          "name": "Country rock",
+          "size": 7
+        },
+        {
+          "name": "Country pop",
+          "size": 20
+        },
+        {
+          "name": "Bluegrass music",
+          "size": 3
+        },
+        {
+          "name": "Americana (music)",
+          "size": 1
+        },
+        {
+          "name": "Country folk",
+          "size": 1
+        },
+        {
+          "name": "Bro-country",
+          "size": 1
+        },
+        {
+          "name": "Western swing",
+          "size": 1
+        },
+        {
+          "name": "Country rap",
+          "size": 3
+        },
+        {
+          "name": "Jimmy Buffett",
+          "size": 1
+        },
+        {
+          "name": "Country folk",
+          "size": 1
+        },
+        {
+          "name": "Bluegrass music",
+          "size": 3
+        }
+      ]
+    },
+    {
+      "name": "Folk",
+      "children": [
+        {
+          "name": "Folk rock",
+          "size": 112
+        },
+        {
+          "name": "Folk music",
+          "size": 64
+        },
+        {
+          "name": "Contemporary folk music",
+          "size": 3
+        },
+        {
+          "name": "Folktronica",
+          "size": 3
+        },
+        {
+          "name": "Indie folk",
+          "size": 1
+        },
+        {
+          "name": "Celtic music",
+          "size": 1
+        },
+        {
+          "name": "Anti-folk",
+          "size": 5
+        },
+        {
+          "name": "Psychedelic folk",
+          "size": 6
+        },
+        {
+          "name": "Progressive folk",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Metal",
+      "children": [
+        {
+          "name": "Alternative metal",
+          "size": 30
+        },
+        {
+          "name": "Heavy metal music",
+          "size": 80
+        },
+        {
+          "name": "Power metal",
+          "size": 8
+        },
+        {
+          "name": "Glam metal",
+          "size": 15
+        },
+        {
+          "name": "Thrash metal",
+          "size": 13
+        },
+        {
+          "name": "Industrial metal",
+          "size": 3
+        },
+        {
+          "name": "Doom metal",
+          "size": 3
+        },
+        {
+          "name": "Deathcore",
+          "size": 1
+        },
+        {
+          "name": "Metalcore",
+          "size": 10
+        },
+        {
+          "name": "Nu metal",
+          "size": 2
+        },
+        {
+          "name": "Viking metal",
+          "size": 2
+        },
+        {
+          "name": "Death metal",
+          "size": 1
+        },
+        {
+          "name": "Progressive metal",
+          "size": 3
+        },
+        {
+          "name": "Speed metal",
+          "size": 1
+        },
+        {
+          "name": "Rap metal",
+          "size": 1
+        },
+        {
+          "name": "Crossover thrash",
+          "size": 3
+        },
+        {
+          "name": "Electronicore",
+          "size": 4
+        }
+      ]
+    },
+    {
+      "name": "Reggae",
+      "children": [
+        {
+          "name": "Reggae fusion",
+          "size": 13
+        },
+        {
+          "name": "Reggae",
+          "size": 15
+        },
+        {
+          "name": "Dancehall",
+          "size": 3
+        },
+        {
+          "name": "Dub (music)",
+          "size": 1
+        },
+        {
+          "name": "Roots reggae",
+          "size": 1
+        },
+        {
+          "name": "Rocksteady",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Soul/R&B",
+      "children": [
+        {
+          "name": "Rhythm and blues",
+          "size": 163
+        },
+        {
+          "name": "PBR&B",
+          "size": 2
+        },
+        {
+          "name": "Hip hop soul",
+          "size": 11
+        },
+        {
+          "name": "Contemporary R&B",
+          "size": 133
+        },
+        {
+          "name": "Soul music",
+          "size": 222
+        },
+        {
+          "name": "Funk",
+          "size": 84
+        },
+        {
+          "name": "Southern soul",
+          "size": 8
+        },
+        {
+          "name": "Blue-eyed soul",
+          "size": 20
+        },
+        {
+          "name": "Neo soul",
+          "size": 6
+        },
+        {
+          "name": "Go-go",
+          "size": 3
+        },
+        {
+          "name": "Northern soul",
+          "size": 2
+        },
+        {
+          "name": "Quiet storm",
+          "size": 1
+        },
+        {
+          "name": "New jack swing",
+          "size": 4
+        },
+        {
+          "name": "Doo-wop",
+          "size": 4
+        }
+      ]
+    },
+    {
+      "name": "Latin",
+      "children": [
+        {
+          "name": "Latin music (genre)",
+          "size": 2
+        },
+        {
+          "name": "Latin pop",
+          "size": 3
+        },
+        {
+          "name": "Bossa nova",
+          "size": 12
+        },
+        {
+          "name": "Salsa music",
+          "size": 2
+        },
+        {
+          "name": "Tropical music",
+          "size": 2
+        },
+        {
+          "name": "Bachata (music)",
+          "size": 6
+        },
+        {
+          "name": "Samba",
+          "size": 2
+        },
+        {
+          "name": "Tropicália",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Classical",
+      "children": [
+        {
+          "name": "Baroque music",
+          "size": 1
+        },
+        {
+          "name": "Classical music",
+          "size": 8
+        },
+        {
+          "name": "Orchestra",
+          "size": 13
+        }
+      ]
+    },
+    {
+      "name": "Punk",
+      "children": [
+        {
+          "name": "Pop punk",
+          "size": 21
+        },
+        {
+          "name": "Horror punk",
+          "size": 1
+        },
+        {
+          "name": "Punk rock",
+          "size": 52
+        },
+        {
+          "name": "Post-hardcore",
+          "size": 4
+        },
+        {
+          "name": "Emo",
+          "size": 4
+        },
+        {
+          "name": "Emo pop",
+          "size": 3
+        },
+        {
+          "name": "Hardcore punk",
+          "size": 5
+        },
+        {
+          "name": "Glam punk",
+          "size": 2
+        },
+        {
+          "name": "Art punk",
+          "size": 2
+        },
+        {
+          "name": "Dance-punk",
+          "size": 1
+        },
+        {
+          "name": "Post-punk",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Gospel/Religious",
+      "children": [
+        {
+          "name": "Gospel music",
+          "size": 26
+        },
+        {
+          "name": "Christian music",
+          "size": 5
+        },
+        {
+          "name": "Contemporary Christian music",
+          "size": 7
+        },
+        {
+          "name": "Christian rock",
+          "size": 6
+        }
+      ]
+    },
+    {
+      "name": "Dance",
+      "children": [
+        {
+          "name": "Disco",
+          "size": 122
+        },
+        {
+          "name": "Euro disco",
+          "size": 13
+        },
+        {
+          "name": "Dance-pop",
+          "size": 80
+        },
+        {
+          "name": "Eurodance",
+          "size": 26
+        },
+        {
+          "name": "Dance music",
+          "size": 22
+        },
+        {
+          "name": "Nu-disco",
+          "size": 10
+        },
+        {
+          "name": "Hi-NRG",
+          "size": 28
+        },
+        {
+          "name": "Italo disco",
+          "size": 6
+        },
+        {
+          "name": "Post-disco",
+          "size": 1
+        },
+        {
+          "name": "Alternative dance",
+          "size": 6
+        },
+        {
+          "name": "Dance-punk",
+          "size": 1
+        },
+        {
+          "name": "Italo disco",
+          "size": 6
+        },
+        {
+          "name": "Dance-rock",
+          "size": 10
+        }
+      ]
+    },
+    {
+      "name": "World",
+      "children": [
+        {
+          "name": "Chanson française",
+          "size": 4
+        },
+        {
+          "name": "Chanson",
+          "size": 2
+        },
+        {
+          "name": "Laïko",
+          "size": 6
+        },
+        {
+          "name": "Bhangragga",
+          "size": 2
+        },
+        {
+          "name": "Music of Italy",
+          "size": 1
+        },
+        {
+          "name": "Music of Hawaii",
+          "size": 2
+        },
+        {
+          "name": "Neo-Medieval music",
+          "size": 2
+        },
+        {
+          "name": "Worldbeat",
+          "size": 1
+        },
+        {
+          "name": "Afro-Caribbean music",
+          "size": 4
+        },
+        {
+          "name": "Music of the Bahamas",
+          "size": 2
+        },
+        {
+          "name": "Calypso music",
+          "size": 1
+        },
+        {
+          "name": "Celtic music",
+          "size": 1
+        },
+        {
+          "name": "Tropicália",
+          "size": 1
+        },
+        {
+          "name": "Afro-Caribbean music",
+          "size": 4
+        },
+        {
+          "name": "Worldbeat",
+          "size": 1
+        },
+        {
+          "name": "Neo-Medieval music",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Indie/Alternative",
+      "children": [
+        {
+          "name": "Adult album alternative",
+          "size": 4
+        },
+        {
+          "name": "Indie rock",
+          "size": 74
+        },
+        {
+          "name": "Indie pop",
+          "size": 16
+        },
+        {
+          "name": "Alternative rock",
+          "size": 217
+        },
+        {
+          "name": "Independent music",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Comedy/Novelty",
+      "children": [
+        {
+          "name": "Comedy hip hop",
+          "size": 4
+        },
+        {
+          "name": "Comedy music",
+          "size": 2
+        },
+        {
+          "name": "Novelty song",
+          "size": 6
+        },
+        {
+          "name": "Parody music",
+          "size": 1
+        },
+        {
+          "name": "Comedy rock",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Ambient",
+      "children": [
+        {
+          "name": "Ambient music",
+          "size": 1
+        },
+        {
+          "name": "New-age music",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "Soundtrack",
+      "children": [
+        {
+          "name": "Soundtrack",
+          "size": 5
+        },
+        {
+          "name": "Broadway theatre",
+          "size": 2
+        },
+        {
+          "name": "Musical theatre",
+          "size": 6
+        },
+        {
+          "name": "Show tune",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Experimental",
+      "children": [
+        {
+          "name": "Experimental rock",
+          "size": 6
+        },
+        {
+          "name": "Noise pop",
+          "size": 3
+        },
+        {
+          "name": "No wave",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "children": [
+        {
+          "name": "Acoustic music",
+          "size": 3
+        },
+        {
+          "name": "Vocal music",
+          "size": 41
+        },
+        {
+          "name": "Christmas music",
+          "size": 19
+        },
+        {
+          "name": "A cappella",
+          "size": 1
+        },
+        {
+          "name": "Crossover (music)",
+          "size": 2
+        },
+        {
+          "name": "Piano",
+          "size": 3
+        },
+        {
+          "name": "Instrumental",
+          "size": 1
+        },
+        {
+          "name": "Music hall",
+          "size": 4
+        },
+        {
+          "name": "Spoken word",
+          "size": 1
+        },
+        {
+          "name": "African-American music",
+          "size": 4
+        },
+        {
+          "name": "Poetry",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "children": [
+        {
+          "name": "Folk punk",
+          "size": 3
+        },
+        {
+          "name": "Ska",
+          "size": 1
+        },
+        {
+          "name": "Pub rock (Australia)",
+          "size": 2
+        },
+        {
+          "name": "California Sound",
+          "size": 4
+        },
+        {
+          "name": "Neo-psychedelia",
+          "size": 1
+        }
+      ]
+    }
+  ]
+}
